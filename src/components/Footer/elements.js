@@ -6,13 +6,13 @@ const FooterWrapper = styled.div`
 
   @media ${THEME.TabletMin} {
     display: block;
-    position: absolute;
+    position: fixed;
     left: 0;
     bottom: 0;
     right: 0;
     width: 100vw;
     box-sizing: border-box;
-    color: white;
+    color: ${({ isBlack }) => (isBlack ? "white" : "black")};
     text-align: center;
     padding-bottom: 12px;
     font-family: ${THEME.primaryFontFamily};

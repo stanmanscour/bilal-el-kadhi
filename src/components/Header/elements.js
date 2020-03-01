@@ -10,12 +10,34 @@ const HeaderWrapper = styled.header`
   right: 20px;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 
   @media ${THEME.TabletMin} {
     top: 10px;
     left: 10px;
     right: 10px;
   }
+`;
+
+HeaderWrapper.BackLink = styled(Link)`
+  text-decoration: none;
+  color: ${THEME.colors.grey};
+  text-transform: uppercase;
+  font-family: ${THEME.primaryFontFamily};
+  font-size: 20px;
+  font-weight: ${THEME.mediumFontWeight};
+
+  &:hover {
+    color: ${({ isBlack }) => (isBlack ? "white" : "black")};
+  }
+`;
+
+HeaderWrapper.Title = styled.h1`
+  color: ${({ isBlack }) => (isBlack ? "white" : "black")};
+  text-transform: uppercase;
+  font-family: ${THEME.primaryFontFamily};
+  font-size: 20px;
+  font-weight: ${THEME.mediumFontWeight};
 `;
 
 HeaderWrapper.Logo = styled(Link)`
@@ -33,57 +55,37 @@ HeaderWrapper.Logo = styled(Link)`
 `;
 
 HeaderWrapper.NavDesktop = styled.ul`
-  display: none;
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  justify-content: flex-end;
+  align-items: center;
 
   @media ${THEME.TabletMin} {
-    display: flex;
-    flex-direction: row;
-    flex-grow: 1;
-    justify-content: center;
-    align-items: center;
     padding-right: 150px;
+    justify-content: center;
+  }
 
-    li {
-      margin-right: 8px;
-      margin-left: 8px;
+  li {
+    margin-right: 8px;
+    margin-left: 8px;
+  }
+
+  a {
+    font-family: ${THEME.primaryFontFamily};
+    font-size: 19px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: ${THEME.colors.grey};
+
+    &:hover {
+      color: ${({ isBlack }) => (isBlack ? "white" : "black")};
     }
 
-    a {
-      font-family: ${THEME.primaryFontFamily};
-      font-size: 19px;
-      text-transform: uppercase;
-      text-decoration: none;
-      color: ${THEME.colors.grey};
-
-      &:hover {
-        color: ${({ isBlack }) => (isBlack ? "white" : "black")};
-      }
-
-      &.active {
-        color: ${({ isBlack }) => (isBlack ? "white" : "black")};
-        font-style: italic;
-      }
+    &.active {
+      color: ${({ isBlack }) => (isBlack ? "white" : "black")};
+      font-style: italic;
     }
-  }
-`;
-
-HeaderWrapper.MobileDesktop = styled.button`
-  background-color: transparent;
-  border: none;
-  padding: 0;
-  margin-left: auto;
-
-  svg {
-    width: 25px;
-    height: auto;
-  }
-
-  &:hover {
-    cursor: pointer;
-  }
-
-  @media ${THEME.TabletMin} {
-    display: none;
   }
 `;
 

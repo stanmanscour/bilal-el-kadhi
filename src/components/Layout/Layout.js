@@ -8,15 +8,21 @@ import LayoutWrapper from "./elements";
 const Layout = ({
   isBlack,
   isShy,
-  headerChildren,
+  headerContentTitle,
+  headerBackUrl,
   footerChildren,
   children
 }) => {
   return (
     <LayoutWrapper isBlack={isBlack}>
-      <Header isShy={isShy} children={headerChildren} isBlack={isBlack} />
+      <Header
+        isShy={isShy}
+        backUrl={headerBackUrl}
+        contentTitle={headerContentTitle}
+        isBlack={isBlack}
+      />
       {children}
-      {!isShy && <Footer children={footerChildren} />}
+      {!isShy && <Footer isBlack={isBlack} children={footerChildren} />}
     </LayoutWrapper>
   );
 };

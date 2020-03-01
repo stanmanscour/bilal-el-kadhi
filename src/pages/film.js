@@ -15,12 +15,11 @@ const Film = () => {
   return (
     <Layout
       isShy={true}
-      headerChildren={
-        <FilmWrapper.BackLink to="/films">Back</FilmWrapper.BackLink>
-      }
+      headerBackUrl="/films"
+      headerContentTitle="titre"
       isBlack={true}
     >
-      <Player video={film.trailer} fullscreen={true}></Player>
+      <Player controls video={film.trailer} fullscreen={true}></Player>
     </Layout>
   );
 };
