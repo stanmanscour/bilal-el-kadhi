@@ -3,7 +3,14 @@ import FooterWrapper from "./elements";
 
 const Footer = ({ isBlack }) => {
   return (
-    <FooterWrapper isBlack={isBlack}>bilalelkadhi@studio.com</FooterWrapper>
+    <FooterWrapper>
+      <FooterWrapper.ContactLink
+        isBlack={isBlack}
+        href="bilalelkadhi@studio.com"
+      >
+        bilalelkadhi@studio.com
+      </FooterWrapper.ContactLink>
+    </FooterWrapper>
   );
 };
 

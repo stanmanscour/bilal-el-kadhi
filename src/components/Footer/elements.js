@@ -2,9 +2,13 @@ import styled from "styled-components";
 import THEME from "../../styles/theme";
 
 const FooterWrapper = styled.div`
-  display: none;
+  /* display: flex;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
-  @media ${THEME.TabletMin} {
+  @media ${THEME.TabletMin} { */
     display: block;
     position: fixed;
     left: 0;
@@ -12,12 +16,15 @@ const FooterWrapper = styled.div`
     right: 0;
     width: 100vw;
     box-sizing: border-box;
-    color: ${({ isBlack }) => (isBlack ? "white" : "black")};
     text-align: center;
     padding-bottom: 12px;
-    font-family: ${THEME.primaryFontFamily};
-    font-size: 16px;
-  }
+  /* } */
+`;
+
+FooterWrapper.ContactLink = styled.a`
+  color: ${({ isBlack }) => (isBlack ? "white" : "black")};
+  font-family: ${THEME.primaryFontFamily};
+  font-size: 16px;
 `;
 
 export default FooterWrapper;

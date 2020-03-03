@@ -1,7 +1,7 @@
 import React from "react";
+import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import Player from "../components/Player";
-import FilmWrapper from "../styles/pages/film";
 
 const film = {
   name: "Gucci",
@@ -11,15 +11,30 @@ const film = {
     "https://i0.wp.com/www.13or-du-hiphop.fr/wp-content/uploads/2020/02/laylow-trinity-.jpg?resize=320%2C320&ssl=1"
 };
 
-const Film = () => {
+export const query = graphql`
+  query($slug: String!) {
+    contentfulFilm(slug: { eq: $slug }) {
+      title
+      media {
+        file {
+          url
+        }
+      }
+    }
+  }
+`;
+
+const Film = props => {
+  const film = props.data.contentfulFilm;
+  console.log(film);
   return (
     <Layout
       isShy={true}
       headerBackUrl="/films"
-      headerContentTitle="titre"
+      headerContentTitle={film.title}
       isBlack={true}
     >
-      <Player controls video={film.trailer} fullscreen={true}></Player>
+      <Player controls video={film.media.file.url} fullscreen={true}></Player>
     </Layout>
   );
 };
