@@ -18,10 +18,11 @@ const Index = () => {
   `);
 
   return (
-    <Layout isBlack>
+    <Layout>
       <IndexWrapper>
         <ReactPlayer
           url={data.contentfulHomeVideo.media.file.url}
+          loop
           playing
           muted
         />

@@ -6,9 +6,9 @@ const Footer = ({ isBlack }) => {
     <FooterWrapper>
       <FooterWrapper.ContactLink
         isBlack={isBlack}
-        href="bilalelkadhi@studio.com"
+        href="mailto:contact@bilalelkadhi.studio"
       >
-        bilalelkadhi@studio.com
+        contact@bilalelkadhi.studio
       </FooterWrapper.ContactLink>
     </FooterWrapper>
   );

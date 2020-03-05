@@ -7,7 +7,7 @@ export const query = graphql`
   query($slug: String!) {
     contentfulFilm(slug: { eq: $slug }) {
       title
-      media {
+      video {
         file {
           url
         }
@@ -25,7 +25,7 @@ const Film = props => {
       headerContentTitle={film.title}
       isBlack={true}
     >
-      <Player controls video={film.media.file.url} fullscreen={true}></Player>
+      <Player controls video={film.video.file.url} fullscreen={true}></Player>
     </Layout>
   );
 };

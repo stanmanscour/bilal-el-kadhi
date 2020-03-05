@@ -1,19 +1,36 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Link, useStaticQuery, graphql } from "gatsby";
+import gsap, { TweenMax } from "gsap";
 
 import Layout from "../components/Layout";
 import Player from "../components/Player";
 import FilmsWrapper from "../styles/pages/films";
+import { useEffect } from "react";
 
 const Films = () => {
   const [currentTrailer, setCurrentTrailer] = useState(0);
-  const showCurrentTrailer = arg => {
-    setCurrentTrailer(arg);
+
+  const handleHover = (e, index) => {
+    setCurrentTrailer(index);
+
+    gsap.to(e.target, {
+      duration: 0.4,
+      scale: 1.05,
+      x: 4,
+      skewX: 1,
+      ease: "Power3.inOut"
+    });
   };
 
-  const handleHover = e => {};
-
-  const handleHoverExit = e => {};
+  const handleHoverExit = e => {
+    gsap.to(e.target, {
+      duration: 0.4,
+      scale: 1,
+      x: -4,
+      skewX: 0,
+      ease: "Power3.inOut"
+    });
+  };
 
   const data = useStaticQuery(graphql`
     query {
@@ -22,9 +39,12 @@ const Films = () => {
           films {
             title
             slug
-            media {
-              description
-              title
+            trailer {
+              file {
+                url
+              }
+            }
+            video {
               file {
                 url
               }
@@ -48,7 +68,7 @@ const Films = () => {
       <FilmsWrapper>
         <Player
           url={films[currentTrailer].slug}
-          video={films[currentTrailer].media.file.url}
+          video={films[currentTrailer].trailer.file.url}
         />
         <FilmsWrapper.Collection>
           {films.map((film, index) => {
@@ -58,7 +78,8 @@ const Films = () => {
                   backgroundImage: `url(${film.poster.file.url})`
                 }}
                 className={index === currentTrailer ? "active" : ""}
-                onMouseEnter={() => showCurrentTrailer(index)}
+                onMouseEnter={e => handleHover(e, index)}
+                onMouseLeave={e => handleHoverExit(e)}
               >
                 <Link to={`/films/${film.slug}`}>
                   <FilmsWrapper.Title>{film.title}</FilmsWrapper.Title>

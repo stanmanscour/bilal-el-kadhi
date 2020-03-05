@@ -29,7 +29,6 @@ FilmsWrapper.Item = styled.li`
   &.active {
     h3 {
       color: white;
-      font-style: italic;
     }
   }
 
@@ -52,19 +51,18 @@ FilmsWrapper.Item = styled.li`
 FilmsWrapper.Title = styled.h3`
   font-family: ${THEME.primaryFontFamily};
   font-size: 21px;
-  color: white;
   line-height: 21px;
+  color: white;
   text-transform: uppercase;
 
   @media ${THEME.TabletMin} {
-    font-size: 35px;
-    line-height: 40px;
-    padding-left: 15px;
+    font-size: 43px;
+    line-height: 1.2;
+    padding-left: 20px;
     color: ${THEME.colors.grey};
 
     &:hover {
       color: white;
-      font-style: italic;
     }
   }
 `;
@@ -82,7 +80,7 @@ FilmsWrapper.Collection = styled.ul`
     top: 0;
     left: 0;
     bottom: 0;
-    width: 30%;
+    // width: 30%;
     min-width: 430px;
     display: flex;
     flex-direction: column;

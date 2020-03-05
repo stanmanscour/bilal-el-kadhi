@@ -9,7 +9,7 @@ THEME.DesktopMin = "screen and (min-width: 1025px)";
 
 THEME.thinFontWeight = 300;
 THEME.mediumFontWeight = 500;
-THEME.boldFontWeight = 800;
+THEME.boldFontWeight = 600;
 
 THEME.colors = {
   grey: "#9b9b9b"

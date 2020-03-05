@@ -1,5 +1,5 @@
 import React from "react";
-import { navigate } from "@reach/router";
+import { navigate, History } from "@reach/router";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
 
 import HeaderWrapper from "./elements";
@@ -8,10 +8,13 @@ const Header = ({ canGoBack, isBlack, isShy, contentTitle }) => {
   const goBack = () => {
     navigate(-1);
   };
+
+  const isHome = window.location.pathname === "/";
+
   return (
     <HeaderWrapper>
       {canGoBack ? (
-        <HeaderWrapper.BackLink isBlack={isBlack} onClick={goBack}>
+        <HeaderWrapper.BackLink href="#" isBlack={isBlack} onClick={goBack}>
           BACK
         </HeaderWrapper.BackLink>
       ) : (
@@ -20,7 +23,7 @@ const Header = ({ canGoBack, isBlack, isShy, contentTitle }) => {
         </HeaderWrapper.Logo>
       )}
       {!isShy && (
-        <HeaderWrapper.NavDesktop isBlack={isBlack}>
+        <HeaderWrapper.NavDesktop isHome={isHome} isBlack={isBlack}>
           <li>
             <AniLink fade activeClassName="active" to="/prints">
               Prints

@@ -12,6 +12,10 @@ const LittlePlayerWrapper = styled.div`
     justify-content: center;
     align-items: center;
 
+    a {
+      opacity: 0.8;
+    }
+
     > div {
       height: 40%;
       width: auto;

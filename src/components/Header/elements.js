@@ -12,6 +12,7 @@ const HeaderWrapper = styled.header`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: baseline;
 
   @media ${THEME.TabletMin} {
     top: 10px;
@@ -26,7 +27,7 @@ HeaderWrapper.BackLink = styled.a`
   text-transform: uppercase;
   font-family: ${THEME.primaryFontFamily};
   font-size: 20px;
-  font-weight: ${THEME.mediumFontWeight};
+  font-weight: ${THEME.boldFontWeight};
 
   &:hover {
     cursor: pointer;
@@ -39,12 +40,12 @@ HeaderWrapper.Title = styled.h1`
   text-transform: uppercase;
   font-family: ${THEME.primaryFontFamily};
   font-size: 20px;
-  font-weight: ${THEME.mediumFontWeight};
+  font-weight: ${THEME.boldFontWeight};
 `;
 
 HeaderWrapper.Logo = styled(AniLink)`
   text-decoration: none;
-  width: 150px;
+  width: 200px;
 
   h1 {
     margin: 0;
@@ -52,7 +53,7 @@ HeaderWrapper.Logo = styled(AniLink)`
     text-transform: uppercase;
     font-family: ${THEME.primaryFontFamily};
     font-size: 20px;
-    font-weight: ${THEME.mediumFontWeight};
+    font-weight: ${THEME.boldFontWeight};
   }
 `;
 
@@ -64,7 +65,7 @@ HeaderWrapper.NavDesktop = styled.ul`
   align-items: center;
 
   @media ${THEME.TabletMin} {
-    padding-right: 150px;
+    padding-right: 200px;
     justify-content: center;
   }
 
@@ -75,18 +76,20 @@ HeaderWrapper.NavDesktop = styled.ul`
 
   a {
     font-family: ${THEME.primaryFontFamily};
+    font-weight: ${THEME.boldFontWeight};
     font-size: 19px;
     text-transform: uppercase;
     text-decoration: none;
-    color: ${THEME.colors.grey};
+    ${({ isHome }) =>
+      isHome ? `color: black` : `color: ${THEME.colors.grey}`};
 
     &:hover {
-      color: ${({ isBlack }) => (isBlack ? "white" : "black")};
+      color: ${({ isBlack, isHome }) => (isBlack ? "white" : "black")};
+      ${({ isHome }) => (isHome ? `color: white` : ``)};
     }
 
     &.active {
       color: ${({ isBlack }) => (isBlack ? "white" : "black")};
-      font-style: italic;
     }
   }
 `;
