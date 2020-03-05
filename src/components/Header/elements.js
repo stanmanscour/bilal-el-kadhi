@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import AniLink from "gatsby-plugin-transition-link/AniLink";
 import { Link } from "gatsby";
 import THEME from "../../styles/theme";
 
@@ -19,7 +20,7 @@ const HeaderWrapper = styled.header`
   }
 `;
 
-HeaderWrapper.BackLink = styled(Link)`
+HeaderWrapper.BackLink = styled.a`
   text-decoration: none;
   color: ${THEME.colors.grey};
   text-transform: uppercase;
@@ -28,6 +29,7 @@ HeaderWrapper.BackLink = styled(Link)`
   font-weight: ${THEME.mediumFontWeight};
 
   &:hover {
+    cursor: pointer;
     color: ${({ isBlack }) => (isBlack ? "white" : "black")};
   }
 `;
@@ -40,7 +42,7 @@ HeaderWrapper.Title = styled.h1`
   font-weight: ${THEME.mediumFontWeight};
 `;
 
-HeaderWrapper.Logo = styled(Link)`
+HeaderWrapper.Logo = styled(AniLink)`
   text-decoration: none;
   width: 150px;
 

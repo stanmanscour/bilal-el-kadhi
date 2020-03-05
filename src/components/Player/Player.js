@@ -1,8 +1,9 @@
 import React from "react";
 import ReactPlayer from "react-player";
+import { Link } from "gatsby";
 import { PlayerWrapper, LittlePlayerWrapper } from "./elements";
 
-const Player = ({ video, fullscreen = false, controls }) => {
+const Player = ({ url, video, fullscreen = false, controls }) => {
   return (
     <>
       {fullscreen ? (
@@ -20,7 +21,14 @@ const Player = ({ video, fullscreen = false, controls }) => {
         </PlayerWrapper>
       ) : (
         <LittlePlayerWrapper>
-          <ReactPlayer width="900px" url={video} playing={true} muted={true} />
+          <Link to={`/films/${url}`}>
+            <ReactPlayer
+              width="900px"
+              url={video}
+              playing={true}
+              muted={true}
+            />
+          </Link>
         </LittlePlayerWrapper>
       )}
     </>

@@ -1,5 +1,33 @@
 const path = require("path");
 
+const createAllPrintPage = async (graphql, createPage) => {
+  const template = path.resolve("./src/templates/print.js");
+  const response = await graphql(`
+    query {
+      allContentfulImage {
+        edges {
+          node {
+            slug
+          }
+        }
+      }
+    }
+  `);
+
+  const prints = response.data.allContentfulImage.edges;
+  console.log(prints[0]);
+
+  prints.forEach(print => {
+    createPage({
+      component: template,
+      path: `/prints/${print.node.slug}`,
+      context: {
+        slug: print.node.slug
+      }
+    });
+  });
+};
+
 const createAllContentPage = async (graphql, createPage, data) => {
   const { templatePath, contentfulName, beginningPath } = data;
   const template = path.resolve(templatePath);
@@ -9,7 +37,6 @@ const createAllContentPage = async (graphql, createPage, data) => {
         edges {
           node {
             films {
-              title,
               slug
             }
           }
@@ -21,8 +48,6 @@ const createAllContentPage = async (graphql, createPage, data) => {
   const films = response.data[contentfulName].edges[0].node.films;
 
   films.forEach(film => {
-    console.log(film.slug);
-    console.log(template);
     createPage({
       component: template,
       path: `/${beginningPath}/${film.slug}`,
@@ -35,6 +60,8 @@ const createAllContentPage = async (graphql, createPage, data) => {
 
 module.exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
+
+  createAllPrintPage(graphql, createPage);
 
   createAllContentPage(graphql, createPage, {
     beginningPath: "films",

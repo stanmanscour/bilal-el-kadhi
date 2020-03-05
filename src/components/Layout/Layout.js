@@ -9,7 +9,7 @@ const Layout = ({
   isBlack,
   isShy,
   headerContentTitle,
-  headerBackUrl,
+  canGoBack,
   footerChildren,
   children
 }) => {
@@ -17,7 +17,7 @@ const Layout = ({
     <LayoutWrapper isBlack={isBlack}>
       <Header
         isShy={isShy}
-        backUrl={headerBackUrl}
+        canGoBack={canGoBack}
         contentTitle={headerContentTitle}
         isBlack={isBlack}
       />

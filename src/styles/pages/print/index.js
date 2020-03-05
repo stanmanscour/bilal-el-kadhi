@@ -12,7 +12,13 @@ const PrintWrapper = styled.div`
   align-items: center;
 
   img {
-    height: 100vh;
+    max-width: 100vw;
+    height: auto;
+    max-height: 100vh;
+
+    @media ${THEME.TabletMin} {
+      height: 100vh;
+    }
   }
 `;
 
