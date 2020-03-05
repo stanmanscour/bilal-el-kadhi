@@ -1,7 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: "Bilal El Kadhi",
-    author: "Stanislas Manscour"
+    author: "Stanislas Manscour",
+    siteUrl: "https://needstobeonproduction.com"
   },
   plugins: [
     "gatsby-plugin-react-helmet",
