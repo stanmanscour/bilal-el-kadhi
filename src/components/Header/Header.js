@@ -3,13 +3,17 @@ import { navigate, History } from "@reach/router";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
 
 import HeaderWrapper from "./elements";
+import { useEffect } from "react";
 
 const Header = ({ canGoBack, isBlack, isShy, contentTitle }) => {
   const goBack = () => {
     navigate(-1);
   };
+  let isHome = false;
 
-  const isHome = window.location.pathname === "/";
+  useEffect(() => {
+    isHome = window.location.pathname === "/";
+  }, []);
 
   return (
     <HeaderWrapper>

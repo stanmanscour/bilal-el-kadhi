@@ -15,7 +15,6 @@ const createAllPrintPage = async (graphql, createPage) => {
   `);
 
   const prints = response.data.allContentfulImage.edges;
-  console.log(prints[0]);
 
   prints.forEach(print => {
     createPage({
