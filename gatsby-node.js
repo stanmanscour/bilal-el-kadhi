@@ -4,7 +4,7 @@ const createAllPrintPage = async (graphql, createPage) => {
   const template = path.resolve("./src/templates/print.js");
   const response = await graphql(`
     query {
-      allContentfulImage {
+      allContentfulPrint {
         edges {
           node {
             slug
@@ -14,7 +14,7 @@ const createAllPrintPage = async (graphql, createPage) => {
     }
   `);
 
-  const prints = response.data.allContentfulImage.edges;
+  const prints = response.data.allContentfulPrint.edges;
 
   prints.forEach(print => {
     createPage({
@@ -67,14 +67,4 @@ module.exports.createPages = async ({ graphql, actions }) => {
     templatePath: "./src/templates/film.js",
     contentfulName: "allContentfulFilmsPage"
   });
-  // createAllContentPage(graphql, createPage, {
-  //   beginningPath: "art-series",
-  //   templatePath: "./src/templates/ContentPage/ContentPage.js",
-  //   contentfulName: "allContentfulArtSeriePost",
-  // })
-  // createAllContentPage(graphql, createPage, {
-  //   beginningPath: "exhibitions",
-  //   templatePath: "./src/templates/Exhibition/Exhibition.js",
-  //   contentfulName: "allContentfulExhibitionPost",
-  // })
 };

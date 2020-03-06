@@ -81,11 +81,11 @@ HeaderWrapper.NavDesktop = styled.ul`
     text-transform: uppercase;
     text-decoration: none;
     ${({ isHome }) =>
-      isHome ? `color: black` : `color: ${THEME.colors.grey}`};
+      isHome ? `color: black` : `color: ${THEME.colors.grey};`}
 
     &:hover {
-      color: ${({ isBlack, isHome }) => (isBlack ? "white" : "black")};
-      ${({ isHome }) => (isHome ? `color: white` : ``)};
+      color: ${({ isBlack }) => (isBlack ? "white;" : "black;")};
+      ${({ isHome }) => (isHome ? `color: white;` : ``)};
     }
 
     &.active {
