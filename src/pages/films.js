@@ -1,11 +1,11 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { Link, useStaticQuery, graphql } from "gatsby";
-import gsap, { TweenMax } from "gsap";
+import gsap from "gsap";
 
 import Layout from "../components/Layout";
 import Player from "../components/Player";
 import FilmsWrapper from "../styles/pages/films";
-import { useEffect } from "react";
+import Head from "../components/Head";
 
 const Films = () => {
   const [currentTrailer, setCurrentTrailer] = useState(0);
@@ -65,6 +65,7 @@ const Films = () => {
 
   return (
     <Layout isBlack={true}>
+      <Head title="Film" />
       <FilmsWrapper>
         <Player
           url={films[currentTrailer].slug}

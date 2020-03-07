@@ -1,6 +1,7 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
-import Layout from "../components/Layout/Layout";
+import Layout from "../components/Layout";
+import Head from "../components/Head";
 import IndexWrapper from "../styles/pages/home";
 import ReactPlayer from "react-player";
 
@@ -19,6 +20,7 @@ const Index = () => {
 
   return (
     <Layout>
+      <Head title="Index" />
       <IndexWrapper>
         <ReactPlayer
           url={data.contentfulHomeVideo.media.file.url}

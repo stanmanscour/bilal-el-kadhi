@@ -1,7 +1,8 @@
 import React from "react";
 import { Link, useStaticQuery, graphql } from "gatsby";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
-import Layout from "../components/Layout/Layout";
+import Head from "../components/Head";
+import Layout from "../components/Layout";
 import PrintsWrapper from "../styles/pages/prints";
 
 const Prints = () => {
@@ -33,6 +34,7 @@ const Prints = () => {
 
   return (
     <Layout>
+      <Head title="Prints" />
       <PrintsWrapper>
         <PrintsWrapper.Collection>
           {prints.map(item => {
