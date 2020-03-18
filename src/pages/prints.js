@@ -29,18 +29,73 @@ const Prints = () => {
     }
   `);
 
+  const returnRatio = ({ width, height }) => {
+    const ratio = width / height;
+    return {
+      width: Math.floor(400 * ratio),
+      height: 300
+    };
+  };
+
   const prints = data.allContentfulPrintsPage.nodes[0].medias;
+  const formattedPrints = data.allContentfulPrintsPage.nodes[0].medias.map(
+    print => {
+      return {
+        title: print.title,
+        slug: print.slug,
+        img: {
+          ...returnRatio(print.media.file.details.image),
+          url: print.media.file.url
+        }
+      };
+    }
+  );
+
+  const groupedImages = () => {
+    const newArray = [];
+    while (formattedPrints.length) {
+      newArray.push(formattedPrints.splice(0, 3));
+    }
+    return newArray;
+  };
+
+  const everyImages = groupedImages().map(imagesGroup => {
+    const entireWidth = imagesGroup.reduce((accumulator, currentValue) => {
+      return accumulator + currentValue.img.width;
+    }, 0);
+    return imagesGroup.map(item => {
+      console.log(imagesGroup.length);
+      return {
+        ...item,
+        img: {
+          ...item.img,
+          widthPercentage:
+            (100 * item.img.width) /
+            (entireWidth + 40 * (imagesGroup.length - 1))
+        }
+      };
+    });
+  });
 
   return (
     <Layout>
       <PrintsWrapper>
+        {everyImages.map(row => (
+          <PrintsWrapper.NewCollection>
+            {row.map(print => (
+              <li style={{ width: `${print.img.widthPercentage}%` }}>
+                <img alt="" style={{ width: "100%" }} src={print.img.url} />
+              </li>
+            ))}
+          </PrintsWrapper.NewCollection>
+        ))}
+
         <PrintsWrapper.Collection>
           {prints.map(item => {
             return (
               <PrintsWrapper.Item>
                 <AniLink fade to={`/prints/${item.slug}`}>
-                  <img src={item.media.file.url} />
-                  <PrintsWrapper.ItemName>{item.title}</PrintsWrapper.ItemName>
+                  <img alt={item.title} src={item.media.file.url} />
                 </AniLink>
               </PrintsWrapper.Item>
             );

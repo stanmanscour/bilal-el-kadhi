@@ -10,7 +10,28 @@ PrintsWrapper.Collection = styled.ul`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
+`;
+
+PrintsWrapper.NewCollection = styled.ul`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 0px auto 100px auto;
+  /* margin-bottom: 50px; */
+  justify-content: space-between;
+
+  li {
+    /* padding: 20px; */
+    /* margin-bottom: 40px; */
+    box-sizing: border-box;
+    img {
+      /* margin: 20px; */
+      box-sizing: border-box;
+      width: 100%;
+    }
+  }
 `;
 
 PrintsWrapper.ItemName = styled.h3`
