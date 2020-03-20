@@ -1,4 +1,6 @@
 import React from "react";
+import "lazysizes";
+import "lazysizes/plugins/attrchange/ls.attrchange";
 import { Link, useStaticQuery, graphql } from "gatsby";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
 import Layout from "../components/Layout/Layout";
@@ -33,7 +35,8 @@ const Prints = () => {
     const ratio = width / height;
     return {
       width: Math.floor(400 * ratio),
-      height: 300
+      initialHeight: height,
+      initialWidth: width
     };
   };
 
@@ -60,11 +63,13 @@ const Prints = () => {
   };
 
   const everyImages = groupedImages().map(imagesGroup => {
+    console.log(imagesGroup);
     const entireWidth = imagesGroup.reduce((accumulator, currentValue) => {
       return accumulator + currentValue.img.width;
     }, 0);
     return imagesGroup.map(item => {
       console.log(imagesGroup.length);
+      console.log(item);
       return {
         ...item,
         img: {
@@ -83,14 +88,32 @@ const Prints = () => {
         {everyImages.map(row => (
           <PrintsWrapper.NewCollection>
             {row.map(print => (
-              <li style={{ width: `${print.img.widthPercentage}%` }}>
-                <img alt="" style={{ width: "100%" }} src={print.img.url} />
-              </li>
+              <PrintsWrapper.Item
+                calculatedWidth={print.img.widthPercentage + "%"}
+                // style={{ width: `${print.img.widthPercentage}%` }}
+              >
+                <PrintsWrapper.ItemLink
+                  to={`prints/${print.slug}`}
+                  style={{
+                    paddingBottom:
+                      100 / (print.img.initialWidth / print.img.initialHeight) +
+                      "%"
+                  }}
+                >
+                  <picture>
+                    <img
+                      className="lazyload"
+                      alt={print.title}
+                      data-src={print.img.url}
+                    />
+                  </picture>
+                </PrintsWrapper.ItemLink>
+              </PrintsWrapper.Item>
             ))}
           </PrintsWrapper.NewCollection>
         ))}
 
-        <PrintsWrapper.Collection>
+        {/* <PrintsWrapper.Collection>
           {prints.map(item => {
             return (
               <PrintsWrapper.Item>
@@ -100,7 +123,7 @@ const Prints = () => {
               </PrintsWrapper.Item>
             );
           })}
-        </PrintsWrapper.Collection>
+        </PrintsWrapper.Collection> */}
       </PrintsWrapper>
     </Layout>
   );
