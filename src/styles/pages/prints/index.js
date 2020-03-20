@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "gatsby";
 import THEME from "../../theme";
 
 const PrintsWrapper = styled.div`
@@ -10,53 +11,54 @@ PrintsWrapper.Collection = styled.ul`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
 `;
 
-PrintsWrapper.ItemName = styled.h3`
-  color: black;
-  margin-top: 8px;
-  text-transform: uppercase;
-  font-family: ${THEME.primaryFontFamily};
-  font-weight: ${THEME.mediumFontWeight};
-  font-size: 16px;
+PrintsWrapper.NewCollection = styled.ul`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 50px auto 0px auto;
+  justify-content: space-between;
 
   @media ${THEME.TabletMin} {
-    font-size: 20px;
+    margin-top: 50px;
+    margin-bottom: 100px;
+  }
+
+  li {
+    /* padding: 20px; */
+    /* margin-bottom: 40px; */
+    box-sizing: border-box;
+    img {
+      /* margin: 20px; */
+      box-sizing: border-box;
+      width: 100%;
+    }
+  }
+`;
+
+PrintsWrapper.ItemLink = styled(Link)`
+  position: relative;
+  display: block;
+  background-color: black;
+
+  img {
+    position: absolute;
   }
 `;
 
 PrintsWrapper.Item = styled.li`
-  position: relative;
-  max-width: 100%;
-  margin: 15px;
-  margin-top: 60px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  @media ${THEME.TabletMin} {
-    width: 45%;
-    box-sizing: border-box;
-  }
-
-  @media ${THEME.DesktopMin} {
-    width: 25%;
-  }
-
-  a {
-    text-decoration: none;
-  }
-
-  &:hover {
-    h3 {
-      opacity: 1;
+  ${props => `
+    width: 100%;
+    margin-bottom: 100px;
+    
+    @media ${THEME.TabletMin}{
+      width: ${props.calculatedWidth};
+      margin-bottom: 0;
     }
-  }
-
-  img {
-    max-width: 100%;
-  }
+  `}
 `;
 
 export default PrintsWrapper;

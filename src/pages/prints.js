@@ -1,4 +1,6 @@
 import React from "react";
+import "lazysizes";
+import "lazysizes/plugins/attrchange/ls.attrchange";
 import { Link, useStaticQuery, graphql } from "gatsby";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
 import Head from "../components/Head";
@@ -30,24 +32,100 @@ const Prints = () => {
     }
   `);
 
+  const returnRatio = ({ width, height }) => {
+    const ratio = width / height;
+    return {
+      width: Math.floor(400 * ratio),
+      initialHeight: height,
+      initialWidth: width
+    };
+  };
+
   const prints = data.allContentfulPrintsPage.nodes[0].medias;
+  const formattedPrints = data.allContentfulPrintsPage.nodes[0].medias.map(
+    print => {
+      return {
+        title: print.title,
+        slug: print.slug,
+        img: {
+          ...returnRatio(print.media.file.details.image),
+          url: print.media.file.url
+        }
+      };
+    }
+  );
+
+  const groupedImages = () => {
+    const newArray = [];
+    while (formattedPrints.length) {
+      newArray.push(formattedPrints.splice(0, 3));
+    }
+    return newArray;
+  };
+
+  const everyImages = groupedImages().map(imagesGroup => {
+    console.log(imagesGroup);
+    const entireWidth = imagesGroup.reduce((accumulator, currentValue) => {
+      return accumulator + currentValue.img.width;
+    }, 0);
+    return imagesGroup.map(item => {
+      console.log(imagesGroup.length);
+      console.log(item);
+      return {
+        ...item,
+        img: {
+          ...item.img,
+          widthPercentage:
+            (100 * item.img.width) /
+            (entireWidth + 40 * (imagesGroup.length - 1))
+        }
+      };
+    });
+  });
 
   return (
     <Layout>
       <Head title="Prints" />
       <PrintsWrapper>
-        <PrintsWrapper.Collection>
+        {everyImages.map(row => (
+          <PrintsWrapper.NewCollection>
+            {row.map(print => (
+              <PrintsWrapper.Item
+                calculatedWidth={print.img.widthPercentage + "%"}
+                // style={{ width: `${print.img.widthPercentage}%` }}
+              >
+                <PrintsWrapper.ItemLink
+                  to={`prints/${print.slug}`}
+                  style={{
+                    paddingBottom:
+                      100 / (print.img.initialWidth / print.img.initialHeight) +
+                      "%"
+                  }}
+                >
+                  <picture>
+                    <img
+                      className="lazyload"
+                      alt={print.title}
+                      data-src={print.img.url}
+                    />
+                  </picture>
+                </PrintsWrapper.ItemLink>
+              </PrintsWrapper.Item>
+            ))}
+          </PrintsWrapper.NewCollection>
+        ))}
+
+        {/* <PrintsWrapper.Collection>
           {prints.map(item => {
             return (
               <PrintsWrapper.Item>
                 <AniLink fade to={`/prints/${item.slug}`}>
-                  <img src={item.media.file.url} />
-                  <PrintsWrapper.ItemName>{item.title}</PrintsWrapper.ItemName>
+                  <img alt={item.title} src={item.media.file.url} />
                 </AniLink>
               </PrintsWrapper.Item>
             );
           })}
-        </PrintsWrapper.Collection>
+        </PrintsWrapper.Collection> */}
       </PrintsWrapper>
     </Layout>
   );
