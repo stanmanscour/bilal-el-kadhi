@@ -109,6 +109,9 @@ const Prints = () => {
                       data-src={print.img.url}
                     />
                   </picture>
+                  <noscript>
+                    <img src={print.img.url} />
+                  </noscript>
                 </PrintsWrapper.ItemLink>
               </PrintsWrapper.Item>
             ))}
