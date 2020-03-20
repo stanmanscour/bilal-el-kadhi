@@ -42,10 +42,18 @@ PrintsWrapper.NewCollection = styled.ul`
 PrintsWrapper.ItemLink = styled(Link)`
   position: relative;
   display: block;
-  background-color: black;
+  background-color: white;
 
   img {
     position: absolute;
+    transition: opacity 0.1s ease;
+
+    &.lazyload {
+      opacity: 0;
+    }
+    &.lazyloaded {
+      opacity: 1;
+    }
   }
 `;
 
