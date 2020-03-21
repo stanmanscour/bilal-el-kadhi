@@ -1,5 +1,5 @@
 import React from "react";
-import { navigate, History } from "@reach/router";
+import { navigate } from "@reach/router";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
 
 import HeaderWrapper from "./elements";
