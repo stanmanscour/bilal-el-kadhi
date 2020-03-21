@@ -23,6 +23,7 @@ const Index = () => {
       <Head title="Index" />
       <IndexWrapper>
         <ReactPlayer
+          playsInline
           url={data.contentfulHomeVideo.media.file.url}
           loop
           playing

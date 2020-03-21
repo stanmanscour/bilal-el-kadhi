@@ -26,12 +26,16 @@ HeaderWrapper.BackLink = styled.a`
   color: ${THEME.colors.grey};
   text-transform: uppercase;
   font-family: ${THEME.primaryFontFamily};
-  font-size: 20px;
+  font-size: 17px;
   font-weight: ${THEME.boldFontWeight};
 
   &:hover {
     cursor: pointer;
     color: ${({ isBlack }) => (isBlack ? "white" : "black")};
+  }
+
+  @media ${THEME.TabletMin} {
+    font-size: 20px;
   }
 `;
 
@@ -39,8 +43,12 @@ HeaderWrapper.Title = styled.h1`
   color: ${({ isBlack }) => (isBlack ? "white" : "black")};
   text-transform: uppercase;
   font-family: ${THEME.primaryFontFamily};
-  font-size: 20px;
+  font-size: 17px;
   font-weight: ${THEME.boldFontWeight};
+
+  @media ${THEME.TabletMin} {
+    font-size: 20px;
+  }
 `;
 
 HeaderWrapper.Logo = styled(AniLink)`
@@ -52,8 +60,12 @@ HeaderWrapper.Logo = styled(AniLink)`
     color: ${({ isBlack }) => (isBlack ? "white" : "black")};
     text-transform: uppercase;
     font-family: ${THEME.primaryFontFamily};
-    font-size: 20px;
+    font-size: 17px;
     font-weight: ${THEME.boldFontWeight};
+
+    @media ${THEME.TabletMin} {
+      font-size: 20px;
+    }
   }
 `;
 
@@ -77,7 +89,7 @@ HeaderWrapper.NavDesktop = styled.ul`
   a {
     font-family: ${THEME.primaryFontFamily};
     font-weight: ${THEME.boldFontWeight};
-    font-size: 19px;
+    font-size: 17px;
     text-transform: uppercase;
     text-decoration: none;
     ${({ isHome }) =>
@@ -90,6 +102,10 @@ HeaderWrapper.NavDesktop = styled.ul`
 
     &.active {
       color: ${({ isBlack }) => (isBlack ? "white" : "black")};
+    }
+
+    @media ${THEME.TabletMin} {
+      font-size: 20px;
     }
   }
 `;
