@@ -6,7 +6,8 @@ import HeaderWrapper from "./elements";
 import { useEffect } from "react";
 
 const Header = ({ canGoBack, isBlack, isShy, contentTitle }) => {
-  const goBack = () => {
+  const goBack = e => {
+    e.preventDefault();
     navigate(-1);
   };
   let isHome = false;
