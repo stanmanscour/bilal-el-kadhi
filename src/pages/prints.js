@@ -64,13 +64,10 @@ const Prints = () => {
   };
 
   const everyImages = groupedImages().map(imagesGroup => {
-    console.log(imagesGroup);
     const entireWidth = imagesGroup.reduce((accumulator, currentValue) => {
       return accumulator + currentValue.img.width;
     }, 0);
     return imagesGroup.map(item => {
-      console.log(imagesGroup.length);
-      console.log(item);
       return {
         ...item,
         img: {
@@ -95,7 +92,7 @@ const Prints = () => {
                 // style={{ width: `${print.img.widthPercentage}%` }}
               >
                 <PrintsWrapper.ItemLink
-                  to={`prints/${print.slug}`}
+                  to={`/prints/${print.slug}`}
                   style={{
                     paddingBottom:
                       100 / (print.img.initialWidth / print.img.initialHeight) +

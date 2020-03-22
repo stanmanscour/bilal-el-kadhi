@@ -24,7 +24,7 @@
     "gatsby-plugin-sitemap": "^2.2.27",
     "gatsby-plugin-stripe-checkout": "^1.1.5",
     "gatsby-plugin-styled-components": "^3.1.19",
-    "gatsby-plugin-transition-link": "^1.17.7",
+    "gatsby-plugin-transition-link": "^1.18.0",
     "gatsby-remark-images": "^3.1.20",
     "gatsby-remark-relative-images": "^0.2.3",
     "gatsby-source-contentful": "^2.1.86",
