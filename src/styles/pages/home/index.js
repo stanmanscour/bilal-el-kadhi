@@ -16,4 +16,17 @@ const IndexWrapper = styled.div`
   }
 `;
 
+IndexWrapper.ImageWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-image: url(${props => props.image});
+  background-size: cover;
+  background-position: 50%;
+`;
+
 export default IndexWrapper;

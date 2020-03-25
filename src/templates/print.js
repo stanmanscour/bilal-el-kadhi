@@ -20,7 +20,7 @@ export const query = graphql`
 const Print = props => {
   const print = props.data.contentfulPrint;
   return (
-    <Layout isShy={true} canGoBack={true} headerContentTitle={print.title}>
+    <Layout isShy={true} canGoBack={true}>
       <Head title={print.title} />
       <PrintWrapper>
         <img src={print.media.file.url} />

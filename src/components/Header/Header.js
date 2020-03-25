@@ -5,17 +5,12 @@ import AniLink from "gatsby-plugin-transition-link/AniLink";
 import HeaderWrapper from "./elements";
 import { useEffect } from "react";
 
-const Header = ({ canGoBack, isBlack, isShy, contentTitle }) => {
+const Header = ({ canGoBack, isBlack, isShy, contentTitle, isHome }) => {
   let headerEl = useRef(null);
   const goBack = e => {
     e.preventDefault();
     navigate(-1);
   };
-  let isHome = false;
-
-  useEffect(() => {
-    isHome = window.location.pathname === "/";
-  }, []);
 
   return (
     <HeaderWrapper ref={el => (headerEl = el)}>
@@ -28,6 +23,8 @@ const Header = ({ canGoBack, isBlack, isShy, contentTitle }) => {
           <h1>Bilal El Kadhi</h1>
         </HeaderWrapper.Logo>
       )}
+      {console.log(isHome)}
+      {console.log(window.location.pathname === "/")}
       {!isShy && (
         <HeaderWrapper.NavDesktop isHome={isHome} isBlack={isBlack}>
           <li>

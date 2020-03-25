@@ -11,7 +11,8 @@ const Layout = ({
   headerContentTitle,
   canGoBack,
   footerChildren,
-  children
+  children,
+  isHome
 }) => {
   return (
     <LayoutWrapper isBlack={isBlack}>
@@ -20,6 +21,7 @@ const Layout = ({
         canGoBack={canGoBack}
         contentTitle={headerContentTitle}
         isBlack={isBlack}
+        isHome={isHome}
       />
       {children}
       {!isShy && <Footer isBlack={isBlack} children={footerChildren} />}
@@ -32,7 +34,8 @@ Layout.defaultProps = {
   isShy: false,
   headerChildren: null,
   footerChildren: null,
-  children: null
+  children: null,
+  isHome: false
 };
 
 export default Layout;

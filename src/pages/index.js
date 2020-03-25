@@ -4,16 +4,12 @@ import gsap from "gsap";
 import Layout from "../components/Layout";
 import Head from "../components/Head";
 import IndexWrapper from "../styles/pages/home";
-import ReactPlayer from "react-player";
+// import ReactPlayer from "react-player";
 import { useRef } from "react";
 
 const Index = () => {
   const [videoPlaying, setVideoPlaying] = useState(false);
   const [hideLoading, setHideLoading] = useState(true);
-
-  useEffect(() => {
-    // setVideoPlaying(true);
-  }, []);
 
   const data = useStaticQuery(graphql`
     query MyQuery {
@@ -34,33 +30,9 @@ const Index = () => {
   let studioText = useRef(null);
   let blockText = useRef(null);
 
-  const startVideo = el => {
-    console.log(Index.loadingEl);
-    gsap.to(loadingEl, {
-      opacity: 0,
-      duration: 3,
-      ease: "Power3.out"
-    });
-  };
-
   useEffect(() => {
-    if (videoPlaying === true) {
-      const newTL = gsap.timeline({
-        onComplete: () => setHideLoading(false)
-      });
-
-      newTL.to(loadingEl, {
-        opacity: 0,
-        duration: 3,
-        ease: "Power3.inOut"
-      });
-    }
-  }, [videoPlaying]);
-
-  useEffect(() => {
-    // console.log(loadingEl);
     const tl = gsap.timeline({
-      onComplete: () => setVideoPlaying(true)
+      onComplete: () => setHideLoading()
     });
     tl.from(
       bilalText1,
@@ -100,17 +72,21 @@ const Index = () => {
           duration: 0.5,
           ease: "Power3.out"
         },
-        "+=2"
+        "+=1"
+      )
+      .to(
+        loadingEl,
+        {
+          opacity: 0,
+          duration: 1,
+          ease: "Power3.inOut"
+        },
+        "-=0.2"
       );
-    // .to(loadingEl, {
-    //   opacity: 0,
-    //   duration: 1,
-    //   ease: "Power3.inOut"
-    // });
   }, []);
 
   return (
-    <Layout>
+    <Layout isHome={true}>
       <Head title="Index" />
       {hideLoading && (
         <div
@@ -149,13 +125,17 @@ const Index = () => {
         </div>
       )}
       <IndexWrapper>
-        <ReactPlayer
+        <IndexWrapper.ImageWrapper
+          image={data.contentfulHomeVideo.media.file.url}
+        />
+
+        {/* <ReactPlayer
           playsInline
           url={data.contentfulHomeVideo.media.file.url}
           loop
           playing={videoPlaying}
           muted
-        />
+        /> */}
       </IndexWrapper>
     </Layout>
   );
