@@ -43,22 +43,22 @@ const Index = () => {
       },
       0.3
     )
-      .from(bilalText2, {
+      .to(bilalText2, {
         y: -100,
-        opacity: 0,
+        opacity: 1,
         duration: 0.6,
         ease: "Power3.inOut"
       })
-      .from(bilalText3, {
-        opacity: 0,
+      .to(bilalText3, {
+        opacity: 1,
         duration: 0.6,
         ease: "Power3.inOut"
       })
-      .from(
+      .to(
         studioText,
         {
-          opacity: 0,
-          y: -20,
+          opacity: 1,
+          // y: 20,
           duration: 0.8,
           ease: "Power3.inOut"
         },
@@ -67,7 +67,7 @@ const Index = () => {
       .to(
         blockText,
         {
-          y: -30,
+          y: 30,
           opacity: 0,
           duration: 0.5,
           ease: "Power3.out"
@@ -123,7 +123,7 @@ const Index = () => {
             </h1>
             <h2
               ref={el => (studioText = el)}
-              style={{ color: "black", textAlign: "center" }}
+              style={{ opacity: 0, color: "black", textAlign: "center" }}
             >
               studio
             </h2>
