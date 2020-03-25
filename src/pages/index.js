@@ -34,10 +34,10 @@ const Index = () => {
     const tl = gsap.timeline({
       onComplete: () => setHideLoading()
     });
-    tl.from(
+    tl.to(
       bilalText1,
       {
-        opacity: 0,
+        opacity: 1,
         duration: 0.6,
         ease: "Power3.inOut"
       },
@@ -111,9 +111,15 @@ const Index = () => {
                 fontWeight: "bold"
               }}
             >
-              <span ref={el => (bilalText1 = el)}>BILAL</span>{" "}
-              <span ref={el => (bilalText2 = el)}>EL</span>{" "}
-              <span ref={el => (bilalText3 = el)}>KADHI</span>
+              <span style={{ opacity: "0" }} ref={el => (bilalText1 = el)}>
+                BILAL
+              </span>{" "}
+              <span style={{ opacity: "0" }} ref={el => (bilalText2 = el)}>
+                EL
+              </span>{" "}
+              <span style={{ opacity: "0" }} ref={el => (bilalText3 = el)}>
+                KADHI
+              </span>
             </h1>
             <h2
               ref={el => (studioText = el)}
