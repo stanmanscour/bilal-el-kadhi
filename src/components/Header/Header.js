@@ -23,8 +23,6 @@ const Header = ({ canGoBack, isBlack, isShy, contentTitle, isHome }) => {
           <h1>Bilal El Kadhi</h1>
         </HeaderWrapper.Logo>
       )}
-      {console.log(isHome)}
-      {console.log(window.location.pathname === "/")}
       {!isShy && (
         <HeaderWrapper.NavDesktop isHome={isHome} isBlack={isBlack}>
           <li>
