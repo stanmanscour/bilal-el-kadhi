@@ -5,21 +5,21 @@ module.exports = {
     siteUrl: "https://needstobeonproduction.com"
   },
   plugins: [
-    "gatsby-plugin-react-helmet",
-    "gatsby-plugin-transition-link",
-    "gatsby-plugin-sitemap",
     {
       resolve: "gatsby-plugin-google-analytics",
       options: {
-        trackingId: "UA-158003972-2",
-        head: false,
-        anonymize: true,
-        respectDNT: true,
-        pageTransitionDelay: 0,
-        sampleRate: 5,
-        siteSpeedSampleRate: 10
+        trackingId: "UA-158003972-2"
+        // head: false,
+        // anonymize: true,
+        // respectDNT: true,
+        // pageTransitionDelay: 0,
+        // sampleRate: 5,
+        // siteSpeedSampleRate: 10
       }
     },
+    "gatsby-plugin-react-helmet",
+    "gatsby-plugin-transition-link",
+    "gatsby-plugin-sitemap",
     {
       resolve: "gatsby-source-contentful",
       options: {
