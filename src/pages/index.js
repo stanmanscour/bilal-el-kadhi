@@ -22,7 +22,7 @@ const Index = () => {
 
   return (
     <Layout isHome={true}>
-      <Head title="Index" />
+      <Head title="Home" />
 
       <IndexWrapper>
         <IndexWrapper.ImageWrapper
