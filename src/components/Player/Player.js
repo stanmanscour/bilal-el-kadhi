@@ -1,8 +1,8 @@
-import React from "react";
-import ReactPlayer from "react-player";
-import gsap from "gsap";
-import { Link } from "gatsby";
-import { PlayerWrapper, LittlePlayerWrapper } from "./elements";
+import React from "react"
+import ReactPlayer from "react-player"
+import gsap from "gsap"
+import { Link } from "gatsby"
+import { PlayerWrapper, LittlePlayerWrapper } from "./elements"
 
 const Player = ({ url, video, fullscreen = false, controls }) => {
   const handleHoverVideo = e => {
@@ -11,8 +11,8 @@ const Player = ({ url, video, fullscreen = false, controls }) => {
       scale: 1.05,
       duration: 0.5,
       ease: "Power3.inOut"
-    });
-  };
+    })
+  }
 
   const handleHoverVideoLeave = e => {
     gsap.to(e.currentTarget, {
@@ -20,8 +20,8 @@ const Player = ({ url, video, fullscreen = false, controls }) => {
       scale: 1,
       duration: 0.5,
       ease: "Power3.inOut"
-    });
-  };
+    })
+  }
 
   return (
     <>
@@ -56,7 +56,7 @@ const Player = ({ url, video, fullscreen = false, controls }) => {
         </LittlePlayerWrapper>
       )}
     </>
-  );
-};
+  )
+}
 
-export default Player;
+export default Player

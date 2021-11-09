@@ -1,7 +1,7 @@
-import styled from "styled-components";
-import AniLink from "gatsby-plugin-transition-link/AniLink";
-import { Link } from "gatsby";
-import THEME from "../../styles/theme";
+import styled from "styled-components"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
+// import { Link } from "gatsby"
+import THEME from "../../styles/theme"
 
 const HeaderWrapper = styled.header`
   z-index: 5;
@@ -19,7 +19,7 @@ const HeaderWrapper = styled.header`
     left: 10px;
     right: 10px;
   }
-`;
+`
 
 HeaderWrapper.BackLink = styled.a`
   text-decoration: none;
@@ -37,7 +37,7 @@ HeaderWrapper.BackLink = styled.a`
   @media ${THEME.TabletMin} {
     font-size: 20px;
   }
-`;
+`
 
 HeaderWrapper.Title = styled.h1`
   color: ${({ isBlack }) => (isBlack ? "white" : "black")};
@@ -49,7 +49,7 @@ HeaderWrapper.Title = styled.h1`
   @media ${THEME.TabletMin} {
     font-size: 20px;
   }
-`;
+`
 
 HeaderWrapper.Logo = styled(AniLink)`
   text-decoration: none;
@@ -67,7 +67,7 @@ HeaderWrapper.Logo = styled(AniLink)`
       font-size: 20px;
     }
   }
-`;
+`
 
 HeaderWrapper.NavDesktop = styled.ul`
   display: flex;
@@ -108,6 +108,6 @@ HeaderWrapper.NavDesktop = styled.ul`
       font-size: 20px;
     }
   }
-`;
+`
 
-export default HeaderWrapper;
+export default HeaderWrapper

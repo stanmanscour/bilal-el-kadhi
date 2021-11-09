@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import THEME from "../../theme";
-import { Link } from "gatsby";
+import styled from "styled-components"
+import THEME from "../../theme"
+import { Link } from "gatsby"
 
 const PrintWrapper = styled.div`
   height: 100vh;
@@ -20,7 +20,7 @@ const PrintWrapper = styled.div`
       height: 100vh;
     }
   }
-`;
+`
 
 PrintWrapper.BackLink = styled(Link)`
   color: ${THEME.colors.grey};
@@ -33,12 +33,12 @@ PrintWrapper.BackLink = styled(Link)`
   &:hover {
     color: black;
   }
-`;
+`
 
 PrintWrapper.Title = styled.h2`
   /* font-size: 16px;
   position: absolute;
   left: */
-`;
+`
 
-export default PrintWrapper;
+export default PrintWrapper

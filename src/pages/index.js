@@ -1,44 +1,105 @@
-import React, { useState, useEffect } from "react";
-import { useStaticQuery, graphql } from "gatsby";
-import gsap from "gsap";
-import Layout from "../components/Layout";
-import Head from "../components/Head";
-import IndexWrapper from "../styles/pages/home";
-// import ReactPlayer from "react-player";
-import { useRef } from "react";
+import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
+import Layout from "../components/Layout"
+import Head from "../components/Head"
+import ReactPlayer from "react-player"
+import IndexWrapper from "../styles/pages/home"
 
 const Index = () => {
   const data = useStaticQuery(graphql`
-    query MyQuery {
-      contentfulHomeVideo {
-        media {
-          file {
-            url
+  query getHome {
+    allContentfulScrollHome {
+      edges {
+        node {
+          medias {
+            __typename
+            ... on Node {
+              ... on ContentfulPrint {
+                title
+                id
+                slug
+                media {
+                  file {
+                    url
+                  }
+                }
+              }
+            }
+            ... on Node {
+              ... on ContentfulFilm {
+                title
+                id
+                slug
+                trailer {
+                  file {
+                    url
+                  }
+                }
+                video {
+                  file {
+                    url
+                  }
+                }
+                poster {
+                  file {
+                    fileName
+                    url
+                  }
+                  description
+                }
+              }
+            }
           }
         }
       }
     }
-  `);
+  }
+`)
+  const medias = data.allContentfulScrollHome.edges[0].node.medias
 
   return (
     <Layout isHome={true}>
       <Head title="Home" />
-
       <IndexWrapper>
-        <IndexWrapper.ImageWrapper
-          image={data.contentfulHomeVideo.media.file.url}
-        />
-
-        {/* <ReactPlayer
-          playsInline
-          url={data.contentfulHomeVideo.media.file.url}
-          loop
-          playing={videoPlaying}
-          muted
-        /> */}
+        {medias.map((media, index) => {
+          if (media.__typename === 'ContentfulPrint') {
+            return (
+              <IndexWrapper.ItemLink
+                  key={media.id}
+                  to={`/prints/${media.slug}`}
+                >
+                  <picture>
+                    <img
+                      className="lazyload"
+                      alt={media.title}
+                      data-src={media.media.file.url}
+                    />
+                  </picture>
+                  <noscript>
+                    <img src={media.media.file.url} alt={media.title} />
+                  </noscript>
+                </IndexWrapper.ItemLink>
+            )
+          } else {
+            return (
+              <IndexWrapper.ItemLink
+                key={media.id}
+                to={`/films/${media.slug}`}
+              >
+                 <ReactPlayer
+                  loop={true}
+                  width="900px"
+                  url={media.trailer.file.url}
+                  playing={true}
+                  muted={true}
+                />
+              </IndexWrapper.ItemLink>
+            )
+          }
+        })}
       </IndexWrapper>
     </Layout>
-  );
-};
+  )
+}
 
-export default Index;
+export default Index

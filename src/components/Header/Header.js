@@ -1,29 +1,24 @@
-import React, { useRef } from "react";
-import { navigate } from "@reach/router";
-import AniLink from "gatsby-plugin-transition-link/AniLink";
+import React from "react"
+import { navigate } from "@reach/router"
+// import AniLink from "gatsby-plugin-transition-link/AniLink"
 
-import HeaderWrapper from "./elements";
-import { useEffect } from "react";
+import HeaderWrapper from "./elements"
+// import { useEffect } from "react"
 
 const Header = ({ canGoBack, isBlack, isShy, contentTitle, isHome }) => {
-  let headerEl = useRef(null);
   const goBack = e => {
-    e.preventDefault();
-    navigate(-1);
-  };
+    e.preventDefault()
+    navigate(-1)
+  }
 
   return (
-    <HeaderWrapper ref={el => (headerEl = el)}>
+    <HeaderWrapper>
       {canGoBack ? (
         <HeaderWrapper.BackLink href="#" isBlack={isBlack} onClick={goBack}>
           BACK
         </HeaderWrapper.BackLink>
-      ) : (
-        <HeaderWrapper.Logo isBlack={isBlack} to="/">
-          <h1>Bilal El Kadhi</h1>
-        </HeaderWrapper.Logo>
-      )}
-      {!isShy && (
+      ) : ''}
+      {/* {!isShy && (
         <HeaderWrapper.NavDesktop isHome={isHome} isBlack={isBlack}>
           <li>
             <AniLink activeClassName="active" to="/prints">
@@ -36,14 +31,14 @@ const Header = ({ canGoBack, isBlack, isShy, contentTitle, isHome }) => {
             </AniLink>
           </li>
         </HeaderWrapper.NavDesktop>
-      )}
+      )} */}
       {contentTitle && (
         <HeaderWrapper.Title isBlack={isBlack}>
           {contentTitle}
         </HeaderWrapper.Title>
       )}
     </HeaderWrapper>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

@@ -1,32 +1,35 @@
-import styled from "styled-components";
-import THEME from "../../styles/theme";
+import styled from "styled-components"
+import THEME from "../../styles/theme"
 
 const FooterWrapper = styled.div`
-  /* display: flex;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  padding: 10vw;
 
-  @media ${THEME.TabletMin} { */
+  @media ${THEME.TabletMin} {
+    padding: 0;
     display: block;
     position: fixed;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    width: 100vw;
+    left: 30px;
+    bottom: 30px;
     box-sizing: border-box;
-    text-align: center;
-    padding-bottom: 12px;
-  /* } */
-`;
+  }
+`
+
+FooterWrapper.Text = styled.p`
+  color: ${({ isBlack }) => (isBlack ? "white" : "black")};
+  font-family: ${THEME.primaryFontFamily};
+  font-weight: 400;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 18px;
+`
 
 FooterWrapper.ContactLink = styled.a`
   color: ${({ isBlack }) => (isBlack ? "white" : "black")};
   font-family: ${THEME.primaryFontFamily};
-  font-weight: 600;
+  font-weight: 400;
   text-decoration: none;
   font-size: 14px;
-`;
+  line-height: 18px;
+`
 
-export default FooterWrapper;
+export default FooterWrapper

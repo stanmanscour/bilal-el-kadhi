@@ -1,7 +1,7 @@
-const path = require("path");
+const path = require("path")
 
 const createAllPrintPage = async (graphql, createPage) => {
-  const template = path.resolve("./src/templates/print.js");
+  const template = path.resolve("./src/templates/print.js")
   const response = await graphql(`
     query {
       allContentfulPrint {
@@ -12,10 +12,9 @@ const createAllPrintPage = async (graphql, createPage) => {
         }
       }
     }
-  `);
+  `)
 
-  const prints = response.data.allContentfulPrint.edges;
-
+  const prints = response.data.allContentfulPrint.edges
   prints.forEach(print => {
     createPage({
       component: template,
@@ -23,13 +22,13 @@ const createAllPrintPage = async (graphql, createPage) => {
       context: {
         slug: print.node.slug
       }
-    });
-  });
-};
+    })
+  })
+}
 
 const createAllContentPage = async (graphql, createPage, data) => {
-  const { templatePath, contentfulName, beginningPath } = data;
-  const template = path.resolve(templatePath);
+  const { templatePath, contentfulName, beginningPath } = data
+  const template = path.resolve(templatePath)
   const response = await graphql(`
     query {
       ${contentfulName} {
@@ -42,10 +41,9 @@ const createAllContentPage = async (graphql, createPage, data) => {
         }
       }
     }
-  `);
+  `)
 
-  const films = response.data[contentfulName].edges[0].node.films;
-
+  const films = response.data[contentfulName].edges[0].node.films
   films.forEach(film => {
     createPage({
       component: template,
@@ -53,18 +51,18 @@ const createAllContentPage = async (graphql, createPage, data) => {
       context: {
         slug: film.slug
       }
-    });
-  });
-};
+    })
+  })
+}
 
 module.exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions;
+  const { createPage } = actions
 
-  createAllPrintPage(graphql, createPage);
+  await createAllPrintPage(graphql, createPage)
 
-  createAllContentPage(graphql, createPage, {
+  await createAllContentPage(graphql, createPage, {
     beginningPath: "films",
     templatePath: "./src/templates/film.js",
     contentfulName: "allContentfulFilmsPage"
-  });
-};
+  })
+}

@@ -1,8 +1,8 @@
-import React from "react";
-import { graphql } from "gatsby";
-import Layout from "../components/Layout";
-import Player from "../components/Player";
-import Head from "../components/Head";
+import React from "react"
+import { graphql } from "gatsby"
+import Layout from "../components/Layout"
+import Player from "../components/Player"
+import Head from "../components/Head"
 
 export const query = graphql`
   query($slug: String!) {
@@ -15,10 +15,10 @@ export const query = graphql`
       }
     }
   }
-`;
+`
 
 const Film = props => {
-  const film = props.data.contentfulFilm;
+  const film = props.data.contentfulFilm
   return (
     <Layout
       isShy={true}
@@ -29,7 +29,7 @@ const Film = props => {
       <Head title={film.title} />
       <Player controls video={film.video.file.url} fullscreen={true}></Player>
     </Layout>
-  );
-};
+  )
+}
 
-export default Film;
+export default Film

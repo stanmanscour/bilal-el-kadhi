@@ -1,12 +1,12 @@
-import styled from "styled-components";
-import THEME from "../../theme";
+import styled from "styled-components"
+import THEME from "../../theme"
 
 const FilmsWrapper = styled.div`
   background-color: black;
   height: 100vh;
   width: 100vw;
   box-sizing: border-box;
-`;
+`
 
 FilmsWrapper.Item = styled.li`
   height: 75vh;
@@ -46,7 +46,7 @@ FilmsWrapper.Item = styled.li`
       width: initial;
     }
   }
-`;
+`
 
 FilmsWrapper.Title = styled.h3`
   font-family: ${THEME.primaryFontFamily};
@@ -65,7 +65,7 @@ FilmsWrapper.Title = styled.h3`
       color: white;
     }
   }
-`;
+`
 
 FilmsWrapper.Collection = styled.ul`
   /* position: absolute;
@@ -86,6 +86,6 @@ FilmsWrapper.Collection = styled.ul`
     flex-direction: column;
     justify-content: center;
   }
-`;
+`
 
-export default FilmsWrapper;
+export default FilmsWrapper

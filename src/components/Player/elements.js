@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import THEME from "../../styles/theme";
+import styled from "styled-components"
+import THEME from "../../styles/theme"
 
 const LittlePlayerWrapper = styled.div`
   display: none;
@@ -21,14 +21,14 @@ const LittlePlayerWrapper = styled.div`
       width: auto;
     }
   }
-`;
+`
 
 const PlayerWrapper = styled.div`
   height: 100vh;
   width: 100vw;
   display: block;
   position: relative;
-`;
+`
 
 PlayerWrapper.Controls = styled.div`
   box-sizing: border-box;
@@ -38,6 +38,6 @@ PlayerWrapper.Controls = styled.div`
   width: 100%;
   border: 1px solid blue;
   height: 40px;
-`;
+`
 
-export { PlayerWrapper, LittlePlayerWrapper };
+export { PlayerWrapper, LittlePlayerWrapper }

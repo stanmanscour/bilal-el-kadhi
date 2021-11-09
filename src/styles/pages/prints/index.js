@@ -1,18 +1,18 @@
 import styled from "styled-components";
-import { Link } from "gatsby";
-import THEME from "../../theme";
+import { Link } from "gatsby"
+import THEME from "../../theme"
 
 const PrintsWrapper = styled.div`
   padding-top: 50px;
   padding-bottom: 50px;
-`;
+`
 
 PrintsWrapper.Collection = styled.ul`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-`;
+`
 
 PrintsWrapper.NewCollection = styled.ul`
   display: flex;
@@ -37,7 +37,7 @@ PrintsWrapper.NewCollection = styled.ul`
       width: 100%;
     }
   }
-`;
+`
 
 PrintsWrapper.ItemLink = styled(Link)`
   position: relative;
@@ -55,18 +55,18 @@ PrintsWrapper.ItemLink = styled(Link)`
       opacity: 1;
     }
   }
-`;
+`
 
 PrintsWrapper.Item = styled.li`
   ${props => `
     width: 100%;
     margin-bottom: 100px;
-    
+
     @media ${THEME.TabletMin}{
       width: ${props.calculatedWidth};
       margin-bottom: 0;
     }
   `}
-`;
+`
 
-export default PrintsWrapper;
+export default PrintsWrapper

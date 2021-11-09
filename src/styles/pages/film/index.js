@@ -1,8 +1,8 @@
-import styled from "styled-components";
-import { Link } from "gatsby";
-import THEME from "../../theme";
+import styled from "styled-components"
+import { Link } from "gatsby"
+import THEME from "../../theme"
 
-const FilmWrapper = styled.div``;
+const FilmWrapper = styled.div``
 
 FilmWrapper.BackLink = styled(Link)`
   color: ${THEME.colors.grey};
@@ -15,6 +15,6 @@ FilmWrapper.BackLink = styled(Link)`
   &:hover {
     color: white;
   }
-`;
+`
 
-export default FilmWrapper;
+export default FilmWrapper

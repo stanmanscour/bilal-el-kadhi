@@ -1,9 +1,9 @@
-import React from "react";
-import "../../styles/index.scss";
-import Header from "../Header";
-import Footer from "../Footer";
+import React from "react"
+import "../../styles/index.scss"
+import Header from "../Header"
+import Footer from "../Footer"
 
-import LayoutWrapper from "./elements";
+import LayoutWrapper from "./elements"
 
 const Layout = ({
   isBlack,
@@ -19,15 +19,12 @@ const Layout = ({
       <Header
         isShy={isShy}
         canGoBack={canGoBack}
-        contentTitle={headerContentTitle}
-        isBlack={isBlack}
-        isHome={isHome}
       />
       {children}
-      {!isShy && <Footer isBlack={isBlack} children={footerChildren} />}
+      {<Footer isBlack={isBlack} canGoBack={canGoBack} children={footerChildren} />}
     </LayoutWrapper>
-  );
-};
+  )
+}
 
 Layout.defaultProps = {
   isBlack: false,
@@ -36,6 +33,6 @@ Layout.defaultProps = {
   footerChildren: null,
   children: null,
   isHome: false
-};
+}
 
-export default Layout;
+export default Layout

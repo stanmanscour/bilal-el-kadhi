@@ -1,20 +1,34 @@
-import styled from "styled-components";
+import styled from "styled-components"
+import { Link } from "gatsby"
+import THEME from "../../../styles/theme"
 
 const IndexWrapper = styled.div`
-  div {
-    width: 100vw !important;
-    height: 100vh !important;
+  flex-direction: column;
+  display: flex;
+  width: 100vw;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  padding: 5vw 0;
+  div, video, img {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  @media ${THEME.TabletMin} {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    width: auto;
+    height: 60vh !important;
     align-items: center;
-    video {
-      height: 100vh !important;
-      min-width: 100vh !important;
+    padding-left: 20vw;
+    div, video, img {
+      height: 100% !important;
+      min-width: auto;
       width: auto !important;
     }
   }
-`;
+`
 
 IndexWrapper.ImageWrapper = styled.div`
   display: flex;
@@ -27,6 +41,28 @@ IndexWrapper.ImageWrapper = styled.div`
   background-image: url(${props => props.image});
   background-size: cover;
   background-position: 50%;
-`;
+`
 
-export default IndexWrapper;
+IndexWrapper.ItemLink = styled(Link)`
+  display: flex;
+  width: 80%;
+  padding: 5vw 0;
+  picture, video {
+    width: 100%;
+    height: auto;
+  }
+
+  @media ${THEME.TabletMin} {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    picture, video {
+      height: 100%;
+      width: auto;
+    }
+  }
+`
+
+export default IndexWrapper

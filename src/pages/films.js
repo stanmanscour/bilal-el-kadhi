@@ -1,17 +1,17 @@
-import React, { useState } from "react";
-import { Link, useStaticQuery, graphql } from "gatsby";
-import gsap from "gsap";
+import React, { useState } from "react"
+import { Link, useStaticQuery, graphql } from "gatsby"
+import gsap from "gsap"
 
-import Layout from "../components/Layout";
-import Player from "../components/Player";
-import FilmsWrapper from "../styles/pages/films";
-import Head from "../components/Head";
+import Layout from "../components/Layout"
+import Player from "../components/Player"
+import FilmsWrapper from "../styles/pages/films"
+import Head from "../components/Head"
 
 const Films = () => {
-  const [currentTrailer, setCurrentTrailer] = useState(0);
+  const [currentTrailer, setCurrentTrailer] = useState(0)
 
   const handleHover = (e, index) => {
-    setCurrentTrailer(index);
+    setCurrentTrailer(index)
 
     gsap.to(e.target, {
       duration: 0.4,
@@ -19,8 +19,8 @@ const Films = () => {
       x: 4,
       skewX: 1,
       ease: "Power3.inOut"
-    });
-  };
+    })
+  }
 
   const handleHoverExit = e => {
     gsap.to(e.target, {
@@ -29,8 +29,8 @@ const Films = () => {
       x: -4,
       skewX: 0,
       ease: "Power3.inOut"
-    });
-  };
+    })
+  }
 
   const data = useStaticQuery(graphql`
     query {
@@ -60,8 +60,8 @@ const Films = () => {
         }
       }
     }
-  `);
-  const films = data.allContentfulFilmsPage.nodes[0].films;
+  `)
+  const films = data.allContentfulFilmsPage.nodes[0].films
 
   return (
     <Layout isBlack={true}>
@@ -86,12 +86,12 @@ const Films = () => {
                   <FilmsWrapper.Title>{film.title}</FilmsWrapper.Title>
                 </Link>
               </FilmsWrapper.Item>
-            );
+            )
           })}
         </FilmsWrapper.Collection>
       </FilmsWrapper>
     </Layout>
-  );
-};
+  )
+}
 
-export default Films;
+export default Films

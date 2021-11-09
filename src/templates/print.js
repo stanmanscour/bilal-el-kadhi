@@ -1,8 +1,8 @@
-import React from "react";
-import { graphql } from "gatsby";
-import Head from "../components/Head";
-import Layout from "../components/Layout";
-import PrintWrapper from "../styles/pages/print";
+import React from "react"
+import { graphql } from "gatsby"
+import Head from "../components/Head"
+import Layout from "../components/Layout"
+import PrintWrapper from "../styles/pages/print"
 
 export const query = graphql`
   query($slug: String!) {
@@ -15,7 +15,7 @@ export const query = graphql`
       }
     }
   }
-`;
+`
 
 const Print = props => {
   const print = props.data.contentfulPrint;
@@ -23,10 +23,10 @@ const Print = props => {
     <Layout isShy={true} canGoBack={true}>
       <Head title={print.title} />
       <PrintWrapper>
-        <img src={print.media.file.url} />
+        <img src={print.media.file.url} alt={print.title} />
       </PrintWrapper>
     </Layout>
-  );
-};
+  )
+}
 
-export default Print;
+export default Print
