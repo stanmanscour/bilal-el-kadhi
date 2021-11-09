@@ -70,9 +70,8 @@ const Index = () => {
                 >
                   <picture>
                     <img
-                      className="lazyload"
                       alt={media.title}
-                      data-src={media.media.file.url}
+                      src={media.media.file.url}
                     />
                   </picture>
                   <noscript>
