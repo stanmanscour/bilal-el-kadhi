@@ -19,10 +19,11 @@ FooterWrapper.Text = styled.p`
   font-family: ${THEME.primaryFontFamily};
   font-weight: 400;
   text-decoration: none;
-  font-size: 12px;
-  line-height: 18px;
+  font-size: 8px;
+  line-height: 12px;
   @media ${THEME.TabletMin} {
     font-size: 14px;
+    line-height: 18px;
   }
 `
 
@@ -31,10 +32,11 @@ FooterWrapper.ContactLink = styled.a`
   font-family: ${THEME.primaryFontFamily};
   font-weight: 400;
   text-decoration: none;
-  font-size: 12px;
-  line-height: 18px;
+  font-size: 8px;
+  line-height: 12px;
   @media ${THEME.TabletMin} {
     font-size: 14px;
+    line-height: 18px;
   }
 `
 
