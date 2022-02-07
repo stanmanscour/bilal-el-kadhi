@@ -37,6 +37,10 @@ HeaderWrapper.BackLink = styled.a`
   @media ${THEME.TabletMin} {
     font-size: 20px;
   }
+  svg {
+    width: 13px;
+    height: 13px;
+  }
 `
 
 HeaderWrapper.Title = styled.h1`

@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: "Bilal El Kadhi",
-    author: "Stanislas Manscour",
-    siteUrl: "https://needstobeonproduction.com"
+    author: "Julie De Mendonça & Stanislas Manscour",
+    siteUrl: "https://bilalelkadhi.studio"
   },
   plugins: [
     {
