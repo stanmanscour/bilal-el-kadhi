@@ -22,7 +22,7 @@ FooterWrapper.Text = styled.p`
   font-size: 8px;
   line-height: 12px;
   @media ${THEME.TabletMin} {
-    font-size: 14px;
+    font-size: 12px;
     line-height: 18px;
   }
 `
@@ -35,7 +35,7 @@ FooterWrapper.ContactLink = styled.a`
   font-size: 8px;
   line-height: 12px;
   @media ${THEME.TabletMin} {
-    font-size: 14px;
+    font-size: 12px;
     line-height: 18px;
   }
 `
