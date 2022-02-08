@@ -7,7 +7,7 @@ const Head = ({
 }) => {
   return (
     <Helmet>
-      <title>{` Bilal El Kadhi | ${title} `}</title>
+      <title>{` Bilal El Kadhi Studio `}</title>
       <meta name="description" content={description} />
     </Helmet>
   );
