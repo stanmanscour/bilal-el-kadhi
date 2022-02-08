@@ -40,6 +40,9 @@ HeaderWrapper.BackLink = styled.a`
   svg {
     width: 13px;
     height: 13px;
+    path {
+      fill: ${({ isBlack }) => (isBlack ? "white" : "black")};
+    }
   }
 `
 
