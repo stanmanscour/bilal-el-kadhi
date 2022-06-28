@@ -17,7 +17,7 @@ const Footer = ({ isBlack, canGoBack }) => {
       {!canGoBack ? (
         <FooterWrapper.ContactLink
           isBlack={isBlack}
-          href="mailto:contact@bilalelkadhi.studio"
+          href="mailto:bilal.elkadhi@gmail.com"
         >
           bilal.elkadhi@gmail.com
         </FooterWrapper.ContactLink>
