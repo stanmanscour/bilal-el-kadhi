@@ -1,7 +1,7 @@
-const path = require("path")
+const path = require('path');
 
 const createAllPrintPage = async (graphql, createPage) => {
-  const template = path.resolve("./src/templates/print.js")
+  const template = path.resolve('./src/templates/print.js');
   const response = await graphql(`
     query {
       allContentfulPrint {
@@ -12,57 +12,85 @@ const createAllPrintPage = async (graphql, createPage) => {
         }
       }
     }
-  `)
+  `);
 
-  const prints = response.data.allContentfulPrint.edges
-  prints.forEach(print => {
+  const prints = response.data.allContentfulPrint.edges;
+  prints.forEach((print) => {
     createPage({
       component: template,
       path: `/prints/${print.node.slug}`,
       context: {
-        slug: print.node.slug
-      }
-    })
-  })
-}
+        slug: print.node.slug,
+      },
+    });
+  });
+};
 
-const createAllContentPage = async (graphql, createPage, data) => {
-  const { templatePath, contentfulName, beginningPath } = data
-  const template = path.resolve(templatePath)
+const createAllFilmPage = async (graphql, createPage) => {
+  const template = path.resolve('./src/templates/film.js');
   const response = await graphql(`
     query {
-      ${contentfulName} {
+      allContentfulFilm {
         edges {
           node {
-            films {
-              slug
-            }
+            slug
           }
         }
       }
     }
-  `)
+  `);
 
-  const films = response.data[contentfulName].edges[0].node.films
-  films.forEach(film => {
+  const films = response.data.allContentfulFilm.edges;
+  films.forEach((film) => {
     createPage({
       component: template,
-      path: `/${beginningPath}/${film.slug}`,
+      path: `/films/${film.node.slug}`,
       context: {
-        slug: film.slug
-      }
-    })
-  })
-}
+        slug: film.node.slug,
+      },
+    });
+  });
+};
+
+// const createAllContentPage = async (graphql, createPage, data) => {
+//   const { templatePath, contentfulName, beginningPath } = data;
+//   const template = path.resolve(templatePath);
+//   const response = await graphql(`
+//     query {
+//       ${contentfulName} {
+//         edges {
+//           node {
+//             films {
+//               slug
+//             }
+//           }
+//         }
+//       }
+//     }
+//   `);
+
+//   const films = response.data[contentfulName].edges[0].node.films;
+//   films.forEach((film) => {
+//     createPage({
+//       component: template,
+//       path: `/${beginningPath}/${film.slug}`,
+//       context: {
+//         slug: film.slug,
+//       },
+//     });
+//   });
+// };
 
 module.exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions
+  const { createPage } = actions;
 
-  await createAllPrintPage(graphql, createPage)
+  await createAllPrintPage(graphql, createPage);
 
-  await createAllContentPage(graphql, createPage, {
-    beginningPath: "films",
-    templatePath: "./src/templates/film.js",
-    contentfulName: "allContentfulFilmsPage"
-  })
-}
+  await createAllFilmPage(graphql, createPage);
+
+  // await createAllContentPage(graphql, createPage, {
+  //   beginningPath: 'films',
+  //   templatePath: './src/templates/film.js',
+  //   contentfulName: 'allContentfulFilmsPage',
+  // });
+};
