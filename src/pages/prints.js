@@ -2,8 +2,6 @@ import React from "react"
 import "lazysizes"
 import "lazysizes/plugins/attrchange/ls.attrchange"
 import { useStaticQuery, graphql } from "gatsby"
-// import { Link } from "gatsby"
-// import AniLink from "gatsby-plugin-transition-link/AniLink"
 import Head from "../components/Head"
 import Layout from "../components/Layout"
 import PrintsWrapper from "../styles/pages/prints"
@@ -42,7 +40,6 @@ const Prints = () => {
     }
   }
 
-  // const prints = data.allContentfulPrintsPage.nodes[0].medias
   const formattedPrints = data.allContentfulPrintsPage.nodes[0].medias.map(
     print => {
       return {

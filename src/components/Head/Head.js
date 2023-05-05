@@ -10,6 +10,7 @@ const Head = ({
       <title>{` Bilal El Kadhi Studio `}</title>
       <meta name="title" content={title} />
       <meta name="description" content={description} />
+      { title !== 'Home' ? <meta name={`robots`} content={`noindex, nofollow`} /> : ''}
     </Helmet>
   );
 };

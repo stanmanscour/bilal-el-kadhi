@@ -67,6 +67,7 @@ const Index = () => {
               <IndexWrapper.ItemLink
                   key={media.id}
                   to={`/prints/${media.slug}`}
+                  rel={`nofollow`}
                 >
                   <picture>
                     <img
@@ -84,6 +85,7 @@ const Index = () => {
               <IndexWrapper.ItemLink
                 key={media.id}
                 to={`/films/${media.slug}`}
+                rel={`nofollow`}
               >
                  <ReactPlayer
                   loop={true}

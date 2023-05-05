@@ -17,9 +17,34 @@ module.exports = {
         // siteSpeedSampleRate: 10
       }
     },
+    {
+      resolve: "gatsby-plugin-sitemap",
+      options: {
+        query: `
+        {
+          site {
+            siteMetadata {
+              siteUrl
+            }
+          }
+    
+          allSitePage {
+            edges {
+              node {
+                path
+              }
+            }
+          }
+        }`,
+        output: `/sitemap.xml`,
+        serialize: ({ site, allSitePage }) => {
+          return [{ url: `${site.siteMetadata? site.siteMetadata.siteUrl : '' }/` }]
+        },
+        resolveSiteUrl: data => data.site.siteMetadata.siteUrl,
+      },
+    },
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-transition-link",
-    "gatsby-plugin-sitemap",
     {
       resolve: "gatsby-source-contentful",
       options: {
