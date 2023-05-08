@@ -41,7 +41,7 @@ module.exports = {
           const pages = []
           allSitePage.edges.map((page) => {
             pages.push({
-              url: `${site.siteMetadata.siteUrl}/${page.node.path}`
+              url: `${site.siteMetadata.siteUrl}${page.node.path}`
             })
           })
           return pages
