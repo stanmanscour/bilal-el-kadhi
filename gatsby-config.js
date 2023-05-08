@@ -20,6 +20,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-sitemap",
       options: {
+        output: '/sitemap_noindex.xml',
         query: `
         {
           site {
@@ -36,7 +37,38 @@ module.exports = {
             }
           }
         }`,
+        serialize: ({ site, allSitePage }) => {
+          const pages = []
+          allSitePage.edges.map((page) => {
+            pages.push({
+              url: `${site.siteMetadata.siteUrl}/${page.node.path}`
+            })
+          })
+          return pages
+        },
+        resolveSiteUrl: data => data.site.siteMetadata.siteUrl,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-sitemap",
+      options: {
         output: `/sitemap.xml`,
+        query: `
+        {
+          site {
+            siteMetadata {
+              siteUrl
+            }
+          }
+    
+          allSitePage {
+            edges {
+              node {
+                path
+              }
+            }
+          }
+        }`,
         serialize: ({ site, allSitePage }) => {
           return [{ url: `${site.siteMetadata? site.siteMetadata.siteUrl : '' }/` }]
         },
