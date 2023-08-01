@@ -2,11 +2,12 @@ import React from 'react';
 import FooterWrapper from './elements';
 
 const Footer = ({ isBlack, canGoBack }) => {
+  const year = new Date().getFullYear()
   return (
     <FooterWrapper>
       {!canGoBack ? (
         <FooterWrapper.Text isBlack={isBlack}>
-          © 2022 BILAL EL KADHI.
+          © {{ year }} BILAL EL KADHI.
           <br />
           All content copyright the artist. No commercial use without express
           written permission.
