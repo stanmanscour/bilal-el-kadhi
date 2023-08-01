@@ -7,7 +7,7 @@ const Footer = ({ isBlack, canGoBack }) => {
     <FooterWrapper>
       {!canGoBack ? (
         <FooterWrapper.Text isBlack={isBlack}>
-          © {{ year }} BILAL EL KADHI.
+          © {year} BILAL EL KADHI.
           <br />
           All content copyright the artist. No commercial use without express
           written permission.
