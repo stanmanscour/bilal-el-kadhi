@@ -15,13 +15,13 @@ const Layout = ({
 
   return (
     <LayoutWrapper isBlack={isBlack}>
-      <Header
+      {/* <Header
         isShy={isShy}
         canGoBack={canGoBack}
         isBlack={isBlack}
       />
       {children}
-      {<Footer isBlack={isBlack} canGoBack={canGoBack} children={footerChildren} />}
+      {<Footer isBlack={isBlack} canGoBack={canGoBack} children={footerChildren} />} */}
     </LayoutWrapper>
   )
 }
