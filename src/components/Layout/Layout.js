@@ -1,7 +1,7 @@
 import React from "react"
 import "../../styles/index.scss"
-import Header from "../Header"
-import Footer from "../Footer"
+// import Header from "../Header"
+// import Footer from "../Footer"
 
 import LayoutWrapper from "./elements"
 
