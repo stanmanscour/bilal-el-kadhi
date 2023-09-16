@@ -2,6 +2,8 @@ import styled from "styled-components"
 import THEME from "../../styles/theme"
 
 const LayoutWrapper = styled.div`
+  position: relative;
+  min-height: 100vh;
 
   .password {
     position: fixed;

@@ -28,7 +28,6 @@ module.exports = {
               siteUrl
             }
           }
-    
           allSitePage {
             edges {
               node {
@@ -60,7 +59,6 @@ module.exports = {
               siteUrl
             }
           }
-    
           allSitePage {
             edges {
               node {

@@ -15,6 +15,12 @@ const Layout = ({
 
   return (
     <LayoutWrapper isBlack={isBlack}>
+      <picture className="image">
+        <img
+          alt={'Bilal El Kadhi'}
+          src={'/homepage.jpeg'}
+        />
+      </picture>
       {/* <Header
         isShy={isShy}
         canGoBack={canGoBack}

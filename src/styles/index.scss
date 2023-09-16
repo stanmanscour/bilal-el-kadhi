@@ -1,1 +1,21 @@
 @import "./reset";
+
+.image {
+  width: 60%;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+  @media screen and (min-width: 1025px) {
+    width: auto;
+    height: 80%;
+    img {
+      height: 100%;
+    }
+  }
+}
