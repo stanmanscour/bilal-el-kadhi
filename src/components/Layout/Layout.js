@@ -1,4 +1,5 @@
-import React from "react"
+import React, { useRef, useState } from "react"
+import ReactPlayer from "react-player"
 import "../../styles/index.scss"
 // import Header from "../Header"
 // import Footer from "../Footer"
@@ -13,14 +14,45 @@ const Layout = ({
   children,
 }) => {
 
+  const [isPlaying, setIsPlaying]  = useState(false)
+  const poster = useRef(null)
+  const video = useRef(null)
+  const playVideo = () => {
+    poster.current.style.opacity = 0
+    setTimeout(() => {
+      poster.current.style.zIndex = -1
+    }, 300)
+    setIsPlaying(true)
+  }
+
   return (
     <LayoutWrapper isBlack={isBlack}>
-      <picture className="image">
-        <img
-          alt={'Bilal El Kadhi'}
-          src={'/homepage.jpeg'}
+      <div className='player-wrapper'>
+        <button ref={poster} tabIndex={0} className="player-button" onClick={playVideo}>
+          <picture className="image" >
+            <img
+              alt={'Bilal El Kadhi'}
+              src={'/poster.jpg'}
+            />
+            <img
+            className="play"
+              alt={'Play'}
+              src={'/play_black.png'}
+            />
+          </picture>
+        </button>
+        <ReactPlayer
+          ref={video}
+          className="react-player"
+          url={'/le_livre_blanc.webm'}
+          width='100%'
+          height='100%'
+          playing={isPlaying}
+          loop={true}
+          controls={true}
+          muted={false}
         />
-      </picture>
+      </div>
       {/* <Header
         isShy={isShy}
         canGoBack={canGoBack}

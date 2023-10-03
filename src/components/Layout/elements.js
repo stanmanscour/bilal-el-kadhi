@@ -3,7 +3,11 @@ import THEME from "../../styles/theme"
 
 const LayoutWrapper = styled.div`
   position: relative;
+  width: 100vw;
   min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   .password {
     position: fixed;
@@ -54,6 +58,7 @@ const LayoutWrapper = styled.div`
     background-color: ${({ isBlack }) => (isBlack ? "black" : "white")};
     display: flex;
     align-items: center;
+    justify-content: center;
     overflow: scroll;
   }
 `
