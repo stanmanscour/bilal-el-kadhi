@@ -1,4 +1,5 @@
 @import "./reset";
+@import url("https://use.typekit.net/pkw1mig.css");
 
 .image {
   width: 90vw;
@@ -54,4 +55,24 @@
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.swiper {
+  height: 80vh;
+  height: 80dvh;
+  &-slide {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+  &-status {
+    position: fixed;
+    right: 10vw;
+    bottom: 10vw;
+    color: black;
+    font-family: 'franklin-gothic-atf',sans-serif;
+    font-weight: 400;
+    font-size: 8px;
+    line-height: 12px;
+  }
 }

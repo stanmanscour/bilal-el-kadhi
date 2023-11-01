@@ -1,6 +1,6 @@
 const THEME = {};
 
-THEME.primaryFontFamily = "'Helvetica', sans-serif";
+THEME.primaryFontFamily = "'franklin-gothic-atf', sans-serif";
 THEME.secondaryFontFamily = "Rubik";
 
 THEME.MobileMax = "screen and (max-width: 768px)";

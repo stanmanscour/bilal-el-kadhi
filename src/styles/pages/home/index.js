@@ -45,14 +45,18 @@ IndexWrapper.ImageWrapper = styled.div`
 
 IndexWrapper.ItemLink = styled(Link)`
   display: flex;
-  width: 80%;
+  width: 70%;
   padding: 5vw 0;
   picture, video {
-    width: 100%;
+    width: 80%;
     height: auto;
+  }
+  img {
+    width: 100%;
   }
 
   @media ${THEME.TabletMin} {
+    width: 80%;
     display: flex;
     flex-direction: column;
     justify-content: center;

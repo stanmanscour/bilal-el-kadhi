@@ -1,8 +1,9 @@
-import React, { useRef, useState } from "react"
-import ReactPlayer from "react-player"
+// import React, { useRef, useState } from "react"
+import React from "react"
+// import ReactPlayer from "react-player"
 import "../../styles/index.scss"
-// import Header from "../Header"
-// import Footer from "../Footer"
+import Header from "../Header"
+import Footer from "../Footer"
 
 import LayoutWrapper from "./elements"
 
@@ -14,20 +15,20 @@ const Layout = ({
   children,
 }) => {
 
-  const [isPlaying, setIsPlaying]  = useState(false)
-  const poster = useRef(null)
-  const video = useRef(null)
-  const playVideo = () => {
-    poster.current.style.opacity = 0
-    setTimeout(() => {
-      poster.current.style.zIndex = -1
-    }, 300)
-    setIsPlaying(true)
-  }
+  // const [isPlaying, setIsPlaying]  = useState(false)
+  // const poster = useRef(null)
+  // const video = useRef(null)
+  // const playVideo = () => {
+  //   poster.current.style.opacity = 0
+  //   setTimeout(() => {
+  //     poster.current.style.zIndex = -1
+  //   }, 300)
+  //   setIsPlaying(true)
+  // }
 
   return (
     <LayoutWrapper isBlack={isBlack}>
-      <div className='player-wrapper'>
+      {/* <div className='player-wrapper'>
         <button ref={poster} tabIndex={0} className="player-button" onClick={playVideo}>
           <picture className="image" >
             <img
@@ -52,14 +53,14 @@ const Layout = ({
           controls={true}
           muted={false}
         />
-      </div>
-      {/* <Header
+      </div> */}
+      <Header
         isShy={isShy}
         canGoBack={canGoBack}
         isBlack={isBlack}
       />
       {children}
-      {<Footer isBlack={isBlack} canGoBack={canGoBack} children={footerChildren} />} */}
+      {<Footer isBlack={isBlack} canGoBack={canGoBack} children={footerChildren} />}
     </LayoutWrapper>
   )
 }

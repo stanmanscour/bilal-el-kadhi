@@ -44,7 +44,7 @@
     "react-use": "^13.14.3",
     "styled-components": "^4.4.1",
     "svg-react-loader": "^0.4.6",
-    "swiper": "^5.2.1",
+    "swiper": "^11.0.3",
     "use-media": "^1.4.0"
   },
   "devDependencies": {

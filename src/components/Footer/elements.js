@@ -2,6 +2,8 @@ import styled from "styled-components"
 import THEME from "../../styles/theme"
 
 const FooterWrapper = styled.div`
+  position: fixed;
+  bottom: 0;
   padding: 10vw;
 
   @media ${THEME.TabletMin} {
@@ -31,7 +33,7 @@ FooterWrapper.ContactLink = styled.a`
   color: ${({ isBlack }) => (isBlack ? "white" : "black")};
   font-family: ${THEME.primaryFontFamily};
   font-weight: 400;
-  text-decoration: none;
+  text-decoration: underline;
   font-size: 8px;
   line-height: 12px;
   @media ${THEME.TabletMin} {
