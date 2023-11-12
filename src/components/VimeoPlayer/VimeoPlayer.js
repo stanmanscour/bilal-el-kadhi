@@ -1,12 +1,15 @@
 import React from "react"
-import Vimeo from '@u-wave/react-vimeo'
+import ReactPlayer from "react-player"
 
 const VimeoPlayer = ({ url, fullscreen = false, controls }) => {
   return (
-    <Vimeo
+    <ReactPlayer
       className="vimeo"
-      video={url}
-      autoplay
+      width="100%"
+      height="100%"
+      playing={true}
+      controls={controls}
+      url={url}
     />
   )
 }
