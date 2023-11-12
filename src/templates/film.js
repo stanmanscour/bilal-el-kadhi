@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import Player from "../components/Player"
+import VimeoPlayer from "../components/VimeoPlayer"
 import Head from "../components/Head"
 
 export const query = graphql`
@@ -13,6 +14,7 @@ export const query = graphql`
           url
         }
       }
+      vimeo
     }
   }
 `
@@ -27,7 +29,8 @@ const Film = props => {
       isBlack={true}
     >
       <Head title={film.title} />
-      <Player controls video={film.video.file.url} fullscreen={true}></Player>
+      {film.video && <Player controls video={film.video.file.url} fullscreen={true}></Player>}
+      {film.vimeo && <VimeoPlayer controls url={film.vimeo} fullscreen={true}></VimeoPlayer>}
     </Layout>
   )
 }
