@@ -1,11 +1,10 @@
 import React from "react"
 import { navigate } from "@reach/router"
-// import AniLink from "gatsby-plugin-transition-link/AniLink"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 import HeaderWrapper from "./elements"
-// import { useEffect } from "react"
 
-const Header = ({ canGoBack, isBlack, isShy, contentTitle, isHome }) => {
+const Header = ({ canGoBack, isBlack, isShy, contentTitle, isHome, isContact }) => {
   const goBack = e => {
     e.preventDefault()
     navigate(-1)
@@ -20,20 +19,20 @@ const Header = ({ canGoBack, isBlack, isShy, contentTitle, isHome }) => {
           </svg>
         </HeaderWrapper.BackLink>
       ) : ''}
-      {/* {!isShy && (
+      {!isShy && (
         <HeaderWrapper.NavDesktop isHome={isHome} isBlack={isBlack}>
-          <li>
-            <AniLink activeClassName="active" to="/prints">
-              Prints
+          {isHome && <li>
+            <AniLink activeClassName="active" to="/contact">
+              Contact
             </AniLink>
-          </li>
-          <li>
-            <AniLink activeClassName="active" to="/films">
-              Films
+          </li>}
+          {isContact && <li>
+            <AniLink activeClassName="active" to="/">
+              Images
             </AniLink>
-          </li>
+          </li>}
         </HeaderWrapper.NavDesktop>
-      )} */}
+      )}
       {contentTitle && (
         <HeaderWrapper.Title isBlack={isBlack}>
           {contentTitle}

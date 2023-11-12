@@ -9,11 +9,6 @@ export const query = graphql`
   query($slug: String!) {
     contentfulFilm(slug: { eq: $slug }) {
       title
-      video {
-        file {
-          url
-        }
-      }
       vimeo
     }
   }

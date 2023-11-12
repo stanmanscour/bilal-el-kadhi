@@ -84,8 +84,7 @@ HeaderWrapper.NavDesktop = styled.ul`
   align-items: center;
 
   @media ${THEME.TabletMin} {
-    padding-right: 200px;
-    justify-content: center;
+    justify-content: space-between;
   }
 
   li {
@@ -102,10 +101,6 @@ HeaderWrapper.NavDesktop = styled.ul`
     ${({ isHome }) =>
       isHome ? `color: black;` : `color: ${THEME.colors.grey};`}
 
-    &:hover {
-      color: ${({ isBlack }) => (isBlack ? "white;" : "black;")};
-      ${({ isHome }) => (isHome ? `color: white;` : ``)};
-    }
 
     &.active {
       color: ${({ isBlack }) => (isBlack ? "white" : "black")};

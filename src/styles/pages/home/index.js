@@ -9,7 +9,6 @@ const IndexWrapper = styled.div`
   height: auto;
   justify-content: center;
   align-items: center;
-  padding: 5vw 0;
   div, video, img {
     width: 100% !important;
     height: auto !important;
@@ -21,6 +20,7 @@ const IndexWrapper = styled.div`
     width: auto;
     height: 60vh !important;
     align-items: center;
+    padding: 5vw 0;
     padding-left: 20vw;
     div, video, img {
       height: 100% !important;
@@ -45,10 +45,10 @@ IndexWrapper.ImageWrapper = styled.div`
 
 IndexWrapper.ItemLink = styled(Link)`
   display: flex;
-  width: 70%;
-  padding: 5vw 0;
+  width: 100%;
+  padding: 0;
   picture, video {
-    width: 80%;
+    width: 100%;
     height: auto;
   }
   img {

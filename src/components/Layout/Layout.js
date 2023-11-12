@@ -3,7 +3,7 @@ import React from "react"
 // import ReactPlayer from "react-player"
 import "../../styles/index.scss"
 import Header from "../Header"
-import Footer from "../Footer"
+// import Footer from "../Footer"
 
 import LayoutWrapper from "./elements"
 
@@ -12,6 +12,8 @@ const Layout = ({
   isShy,
   canGoBack,
   footerChildren,
+  isContact,
+  isHome,
   children,
 }) => {
 
@@ -58,9 +60,11 @@ const Layout = ({
         isShy={isShy}
         canGoBack={canGoBack}
         isBlack={isBlack}
+        isContact={isContact}
+        isHome={isHome}
       />
       {children}
-      {<Footer isBlack={isBlack} canGoBack={canGoBack} children={footerChildren} />}
+      {/* {<Footer isBlack={isBlack} canGoBack={canGoBack} children={footerChildren} />} */}
     </LayoutWrapper>
   )
 }

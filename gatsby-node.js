@@ -54,6 +54,10 @@ const createAllFilmPage = async (graphql, createPage) => {
 
 module.exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
+  createPage({
+    component: path.resolve('./src/pages/contact.js'),
+    path: `/contact`
+  });
 
   await createAllPrintPage(graphql, createPage);
   await createAllFilmPage(graphql, createPage);

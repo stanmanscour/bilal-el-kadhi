@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/Layout"
 import Head from "../components/Head"
 import ReactPlayer from "react-player"
 import IndexWrapper from "../styles/pages/home"
-import useIsMobile from "../hooks/useIsMobile"
 
-import Swiper from 'swiper'
+// import Swiper from 'swiper'
 import 'swiper/swiper.min.css'
 
 const Index = () => {
@@ -39,11 +38,7 @@ const Index = () => {
                     url
                   }
                 }
-                video {
-                  file {
-                    url
-                  }
-                }
+                vimeo
                 poster {
                   file {
                     fileName
@@ -60,42 +55,41 @@ const Index = () => {
   }
 `)
   const medias = data.allContentfulScrollHome.edges[0].node.medias
-  const isMobile = useIsMobile()
 
   return (
     <Layout isHome={true}>
       <Head title="Home" />
-      {isMobile ? <Slider medias={medias} /> : <ScrollDiv medias={medias} />}
+      <ScrollDiv medias={medias} />
     </Layout>
   )
 }
 
-const Slider = (props) => {
-  const [current, setCurrent] = useState(0)
-  const [total, setTotal] = useState(0)
-  useEffect(() => {
-    const swiper = new Swiper('.swiper', {
-      loop: true,
-      on: {
-        slideChange: function (e) {
-          setCurrent(e.activeIndex + 1)
-        },
-      },
-    })
-    setTotal(swiper.slides.length)
-  }, [])
+// const Slider = (props) => {
+//   const [current, setCurrent] = useState(0)
+//   const [total, setTotal] = useState(0)
+//   useEffect(() => {
+//     const swiper = new Swiper('.swiper', {
+//       loop: true,
+//       on: {
+//         slideChange: function (e) {
+//           setCurrent(e.activeIndex + 1)
+//         },
+//       },
+//     })
+//     setTotal(swiper.slides.length)
+//   }, [])
 
-  return (
-    <div className={'swiper'} >
-      <div className={'swiper-wrapper'} >
-      {props.medias.map((media, index) => {
-        return  <Media key={'sliderMedia' + index} media={media} slider={true} />
-      })}
-      </div>
-      <div className={'swiper-status'} >{current} / {total}</div>
-    </div>
-  )
-}
+//   return (
+//     <div className={'swiper'} >
+//       <div className={'swiper-wrapper'} >
+//       {props.medias.map((media, index) => {
+//         return  <Media key={'sliderMedia' + index} media={media} slider={true} />
+//       })}
+//       </div>
+//       <div className={'swiper-status'} >{current} / {total}</div>
+//     </div>
+//   )
+// }
 
 const ScrollDiv = (props) => {
   return (
@@ -146,6 +140,5 @@ const Media = (props) => {
     )
   }
 }
-
 
 export default Index
