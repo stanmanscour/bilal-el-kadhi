@@ -80,7 +80,6 @@ HeaderWrapper.NavDesktop = styled.ul`
   display: flex;
   flex-direction: row;
   flex-grow: 1;
-  justify-content: flex-end;
   align-items: center;
 
   @media ${THEME.TabletMin} {
