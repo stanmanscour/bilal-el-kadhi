@@ -6,7 +6,7 @@ import ReactPlayer from 'react-player'
 import ViewAllWrapper from '../styles/pages/all'
 import useIsMobile from '../hooks/useIsMobile'
 
-const Index = () => {
+const All = () => {
   const data = useStaticQuery(graphql`
     query getAll {
       allContentfulScrollHome {
@@ -53,22 +53,16 @@ const Index = () => {
     }
   `)
   const medias = data.allContentfulScrollHome.edges[0].node.medias
-
+  
   return (
-    <Layout isHome={true} isAll={true}>
+    <Layout isAll={true}>
       <Head title="Home" />
-      <ViewAll medias={medias} />
+      <ViewAllWrapper>
+        {medias.map((media, index) => {
+          return <Media key={'scrollMedia' + index} media={media} />
+        })}
+      </ViewAllWrapper>
     </Layout>
-  )
-}
-
-const ViewAll = props => {
-  return (
-    <ViewAllWrapper>
-      {props.medias.map((media, index) => {
-        return <Media key={'scrollMedia' + index} media={media} />
-      })}
-    </ViewAllWrapper>
   )
 }
 
@@ -91,7 +85,6 @@ const Media = props => {
       </ViewAllWrapper.ItemLink>
     )
   } else {
-    console.log(props.media.trailer)
     return (
       <ViewAllWrapper.ItemLink
         key={props.media.id}
@@ -101,8 +94,8 @@ const Media = props => {
       >
         <ReactPlayer
           loop={true}
-          height={isMobile ? '120px' : '300px'}
-          width={isMobile ? '300px' : '750px'}
+          width="100%"
+          height={isMobile ? '120px' : '250px'}
           url={props.media.trailer.file.url}
           playing={true}
           muted={true}
@@ -112,4 +105,4 @@ const Media = props => {
   }
 }
 
-export default Index
+export default All

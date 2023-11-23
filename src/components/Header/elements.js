@@ -6,9 +6,9 @@ import THEME from "../../styles/theme"
 const HeaderWrapper = styled.header`
   z-index: 5;
   position: fixed;
-  top: 25px;
-  left: 20px;
-  right: 20px;
+  top: 10px;
+  left: 5px;
+  right: 5px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -81,10 +81,7 @@ HeaderWrapper.NavDesktop = styled.ul`
   flex-direction: row;
   flex-grow: 1;
   align-items: center;
-
-  @media ${THEME.TabletMin} {
-    justify-content: space-between;
-  }
+  justify-content: space-between;
 
   li {
     margin-right: 8px;

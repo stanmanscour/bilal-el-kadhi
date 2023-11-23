@@ -1,9 +1,10 @@
 // import React, { useRef, useState } from "react"
-import React from 'react'
 // import ReactPlayer from "react-player"
+// import Footer from "../Footer"
+
+import React from 'react'
 import '../../styles/index.scss'
 import Header from '../Header'
-// import Footer from "../Footer"
 
 import LayoutWrapper from './elements'
 
@@ -11,11 +12,11 @@ const Layout = ({
   isBlack,
   isShy,
   canGoBack,
-  footerChildren,
   isContact,
   isHome,
   isAll,
-  children
+  children,
+  footerChildren,
 }) => {
   // const [isPlaying, setIsPlaying]  = useState(false)
   // const poster = useRef(null)
@@ -60,8 +61,9 @@ const Layout = ({
         isShy={isShy}
         canGoBack={canGoBack}
         isBlack={isBlack}
-        isContact={isContact}
         isHome={isHome}
+        isContact={isContact}
+        isAll={isAll}
       />
       {children}
       {/* {<Footer isBlack={isBlack} canGoBack={canGoBack} children={footerChildren} />} */}

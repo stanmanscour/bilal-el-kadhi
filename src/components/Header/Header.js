@@ -42,7 +42,7 @@ const Header = ({
       )}
       {!isShy && (
         <HeaderWrapper.NavDesktop isHome={isHome} isBlack={isBlack}>
-          {isHome && (
+          {(isHome || isAll) && (
             <li>
               <AniLink activeClassName="active" to="/contact">
                 Contact
@@ -56,17 +56,22 @@ const Header = ({
               </AniLink>
             </li>
           )}
+          {isHome && (
+            <li>
+              <AniLink activeClassName="active" to="/all">
+                View all
+              </AniLink>
+            </li>
+          )}
+          {isAll && (
+            <li>
+              <AniLink activeClassName="active" to="/">
+                Slideshow
+              </AniLink>
+            </li>
+          )}
         </HeaderWrapper.NavDesktop>
       )}
-      <HeaderWrapper.NavDesktop isHome={isHome} isBlack={isBlack} isAll={isAll}>
-        {isHome && (
-          <li>
-            <AniLink activeClassName="active" to="/all">
-              View all
-            </AniLink>
-          </li>
-        )}
-      </HeaderWrapper.NavDesktop>
       {contentTitle && (
         <HeaderWrapper.Title isBlack={isBlack}>
           {contentTitle}
