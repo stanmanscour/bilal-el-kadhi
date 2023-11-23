@@ -1,11 +1,11 @@
 // import React, { useRef, useState } from "react"
-import React from "react"
+import React from 'react'
 // import ReactPlayer from "react-player"
-import "../../styles/index.scss"
-import Header from "../Header"
+import '../../styles/index.scss'
+import Header from '../Header'
 // import Footer from "../Footer"
 
-import LayoutWrapper from "./elements"
+import LayoutWrapper from './elements'
 
 const Layout = ({
   isBlack,
@@ -14,9 +14,9 @@ const Layout = ({
   footerChildren,
   isContact,
   isHome,
-  children,
+  isAll,
+  children
 }) => {
-
   // const [isPlaying, setIsPlaying]  = useState(false)
   // const poster = useRef(null)
   // const video = useRef(null)
@@ -29,7 +29,7 @@ const Layout = ({
   // }
 
   return (
-    <LayoutWrapper isBlack={isBlack}>
+    <LayoutWrapper isBlack={isBlack} isAll={isAll}>
       {/* <div className='player-wrapper'>
         <button ref={poster} tabIndex={0} className="player-button" onClick={playVideo}>
           <picture className="image" >

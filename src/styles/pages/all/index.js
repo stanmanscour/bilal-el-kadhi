@@ -5,31 +5,25 @@ import THEME from '../../../styles/theme'
 const ViewAllWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 60px 0;
 
   @media ${THEME.TabletMin} {
   }
 `
 
 ViewAllWrapper.ItemLink = styled(Link)`
-  height: 200px;
-  width: 100%;
   picture,
   video {
-    height: 100%;
-    width: 100%;
+    display: flex;
+    height: 120px;
+    width: auto;
   }
 
   @media ${THEME.TabletMin} {
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
     picture,
     video {
-      height: 100%;
-      width: auto;
+      height: 300px;
     }
   }
 `

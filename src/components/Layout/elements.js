@@ -1,9 +1,9 @@
-import styled from "styled-components"
-import THEME from "../../styles/theme"
+import styled from 'styled-components'
+import THEME from '../../styles/theme'
 
 const LayoutWrapper = styled.div`
   min-height: 100vh;
-  background-color: ${({ isBlack }) => (isBlack ? "black" : "white")};
+  background-color: ${({ isBlack }) => (isBlack ? 'black' : 'white')};
 
   .password {
     position: fixed;
@@ -49,8 +49,8 @@ const LayoutWrapper = styled.div`
   }
 
   @media ${THEME.TabletMin} {
+    height: ${({ isAll }) => (isAll ? 'auto' : ' 100vh')};
     width: 100vw;
-    height: 100vh;
     display: flex;
     align-items: center;
     overflow: scroll;

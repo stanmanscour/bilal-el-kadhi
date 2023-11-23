@@ -7,6 +7,7 @@ import HeaderWrapper from './elements'
 const Header = ({
   canGoBack,
   isBlack,
+  isAll,
   isShy,
   contentTitle,
   isHome,
@@ -57,7 +58,7 @@ const Header = ({
           )}
         </HeaderWrapper.NavDesktop>
       )}
-      <HeaderWrapper.NavDesktop isHome={isHome} isBlack={isBlack}>
+      <HeaderWrapper.NavDesktop isHome={isHome} isBlack={isBlack} isAll={isAll}>
         {isHome && (
           <li>
             <AniLink activeClassName="active" to="/all">
