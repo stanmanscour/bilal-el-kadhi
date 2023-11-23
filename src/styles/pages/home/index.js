@@ -1,6 +1,6 @@
-import styled from "styled-components"
-import { Link } from "gatsby"
-import THEME from "../../../styles/theme"
+import styled from 'styled-components'
+import { Link } from 'gatsby'
+import THEME from '../../../styles/theme'
 
 const IndexWrapper = styled.div`
   flex-direction: column;
@@ -9,7 +9,9 @@ const IndexWrapper = styled.div`
   height: auto;
   justify-content: center;
   align-items: center;
-  div, video, img {
+  div,
+  video,
+  img {
     width: 100% !important;
     height: auto !important;
   }
@@ -22,7 +24,9 @@ const IndexWrapper = styled.div`
     align-items: center;
     padding: 5vw 0;
     padding-left: 20vw;
-    div, video, img {
+    div,
+    video,
+    img {
       height: 100% !important;
       min-width: auto;
       width: auto !important;
@@ -47,7 +51,8 @@ IndexWrapper.ItemLink = styled(Link)`
   display: flex;
   width: 100%;
   padding: 0;
-  picture, video {
+  picture,
+  video {
     width: 100%;
     height: auto;
   }
@@ -62,7 +67,8 @@ IndexWrapper.ItemLink = styled(Link)`
     justify-content: center;
     align-items: center;
     height: 100%;
-    picture, video {
+    picture,
+    video {
       height: 100%;
       width: auto;
     }
