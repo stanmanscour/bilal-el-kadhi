@@ -21,7 +21,7 @@ ViewAllWrapper.ItemLink = styled(Link)`
   picture,
   video {
     display: flex;
-    height: 120px;
+    height: 110px;
     width: auto;
   }
 

@@ -95,7 +95,7 @@ const Media = props => {
         <ReactPlayer
           loop={true}
           width="100%"
-          height={isMobile ? '120px' : '250px'}
+          height={isMobile ? '110px' : '250px'}
           url={props.media.trailer.file.url}
           playing={true}
           muted={true}
