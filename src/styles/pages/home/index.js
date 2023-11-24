@@ -13,7 +13,7 @@ const IndexWrapper = styled.div`
   video,
   img {
     width: 100% !important;
-    height: auto !important;
+    height: 100% !important;
   }
 
   @media ${THEME.TabletMin} {
@@ -58,6 +58,10 @@ IndexWrapper.ItemLink = styled(Link)`
   }
   img {
     width: 100%;
+  }
+  div {
+    display: flex;
+    height: 100%;
   }
 
   @media ${THEME.TabletMin} {
