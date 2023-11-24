@@ -28,10 +28,11 @@ HeaderWrapper.BackLink = styled.a`
   font-family: ${THEME.primaryFontFamily};
   font-size: 17px;
   font-weight: ${THEME.boldFontWeight};
+  transition: color 0.3s ease-out;
 
   &:hover {
     cursor: pointer;
-    color: ${({ isBlack }) => (isBlack ? 'white' : 'black')};
+    color: ${({ isBlack }) => (isBlack ? '#e0e0e0' : '#e0e0e0')};
   }
 
   @media ${THEME.TabletMin} {
@@ -95,7 +96,11 @@ HeaderWrapper.NavDesktop = styled.ul`
     text-transform: uppercase;
     text-decoration: none;
     ${({ isHome }) => (isHome ? `color: white;` : `color: white;`)}
+    transition: color 0.3s ease-out;
 
+    &:hover {
+      color: #e0e0e0;
+    }
     &.active {
       color: ${({ isBlack }) => (isBlack ? 'white' : 'black')};
     }

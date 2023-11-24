@@ -15,6 +15,11 @@ const ContactWrapper = styled.div`
     text-transform: uppercase;
     font-size: 13px;
     line-height: 13px;
+    transition: color 0.3s ease-out;
+
+    &:hover {
+      color: #e0e0e0;
+    }
   }
 
   @media ${THEME.TabletMin} {
