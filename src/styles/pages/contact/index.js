@@ -8,7 +8,7 @@ const ContactWrapper = styled.div`
   justify-content: center;
   align-items: center;
   a {
-    color: black;
+    color: white;
     font-family: ${THEME.primaryFontFamily};
     font-weight: 400;
     text-decoration: underline;

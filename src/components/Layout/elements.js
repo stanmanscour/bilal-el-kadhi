@@ -21,7 +21,7 @@ const LayoutWrapper = styled.div`
   }
 
   h2 {
-    font-family: 'Arial';
+    font-family: 'Time New Roman';
     text-transform: uppercase;
     color: white;
   }

@@ -16,7 +16,7 @@ const Layout = ({
   isHome,
   isAll,
   children,
-  footerChildren,
+  footerChildren
 }) => {
   // const [isPlaying, setIsPlaying]  = useState(false)
   // const poster = useRef(null)
@@ -30,7 +30,7 @@ const Layout = ({
   // }
 
   return (
-    <LayoutWrapper isBlack={isBlack} isAll={isAll}>
+    <LayoutWrapper isBlack={true} isAll={isAll}>
       {/* <div className='player-wrapper'>
         <button ref={poster} tabIndex={0} className="player-button" onClick={playVideo}>
           <picture className="image" >
