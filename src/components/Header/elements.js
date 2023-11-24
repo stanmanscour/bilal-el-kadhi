@@ -1,7 +1,7 @@
-import styled from "styled-components"
-import AniLink from "gatsby-plugin-transition-link/AniLink"
+import styled from 'styled-components'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 // import { Link } from "gatsby"
-import THEME from "../../styles/theme"
+import THEME from '../../styles/theme'
 
 const HeaderWrapper = styled.header`
   z-index: 5;
@@ -31,7 +31,7 @@ HeaderWrapper.BackLink = styled.a`
 
   &:hover {
     cursor: pointer;
-    color: ${({ isBlack }) => (isBlack ? "white" : "black")};
+    color: ${({ isBlack }) => (isBlack ? 'white' : 'black')};
   }
 
   @media ${THEME.TabletMin} {
@@ -41,13 +41,13 @@ HeaderWrapper.BackLink = styled.a`
     width: 13px;
     height: 13px;
     path {
-      fill: ${({ isBlack }) => (isBlack ? "white" : "black")};
+      fill: ${({ isBlack }) => (isBlack ? 'white' : 'black')};
     }
   }
 `
 
 HeaderWrapper.Title = styled.h1`
-  color: ${({ isBlack }) => (isBlack ? "white" : "black")};
+  color: ${({ isBlack }) => (isBlack ? 'white' : 'black')};
   text-transform: uppercase;
   font-family: ${THEME.primaryFontFamily};
   font-size: 17px;
@@ -64,7 +64,7 @@ HeaderWrapper.Logo = styled(AniLink)`
 
   h1 {
     margin: 0;
-    color: ${({ isBlack }) => (isBlack ? "white" : "black")};
+    color: ${({ isBlack }) => (isBlack ? 'white' : 'black')};
     text-transform: uppercase;
     font-family: ${THEME.primaryFontFamily};
     font-size: 17px;
@@ -91,19 +91,17 @@ HeaderWrapper.NavDesktop = styled.ul`
   a {
     font-family: ${THEME.primaryFontFamily};
     font-weight: ${THEME.boldFontWeight};
-    font-size: 17px;
+    font-size: 13px;
     text-transform: uppercase;
     text-decoration: none;
-    ${({ isHome }) =>
-      isHome ? `color: black;` : `color: black;`}
-
+    ${({ isHome }) => (isHome ? `color: black;` : `color: black;`)}
 
     &.active {
-      color: ${({ isBlack }) => (isBlack ? "white" : "black")};
+      color: ${({ isBlack }) => (isBlack ? 'white' : 'black')};
     }
 
     @media ${THEME.TabletMin} {
-      font-size: 20px;
+      font-size: 16px;
     }
   }
 `

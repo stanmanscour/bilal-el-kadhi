@@ -1,7 +1,7 @@
-import styled from "styled-components"
-import THEME from "../../theme"
+import styled from 'styled-components'
+import THEME from '../../theme'
 
-const ContactWrapper = styled.div` 
+const ContactWrapper = styled.div`
   display: flex;
   width: 100%;
   height: 100vh;
@@ -11,16 +11,17 @@ const ContactWrapper = styled.div`
     color: black;
     font-family: ${THEME.primaryFontFamily};
     font-weight: 400;
-    text-decoration: none;
-    font-size: 8px;
-    line-height: 12px;
+    text-decoration: underline;
+    text-transform: uppercase;
+    font-size: 13px;
+    line-height: 13px;
   }
 
   @media ${THEME.TabletMin} {
     height: 100%;
     a {
-      font-size: 12px;
-      line-height: 18px;
+      font-size: 16px;
+      line-height: 16px;
     }
   }
 `

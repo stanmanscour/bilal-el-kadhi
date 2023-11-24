@@ -53,7 +53,7 @@ const All = () => {
     }
   `)
   const medias = data.allContentfulScrollHome.edges[0].node.medias
-  
+
   return (
     <Layout isAll={true}>
       <Head title="Home" />
@@ -93,12 +93,13 @@ const Media = props => {
         className={props.slider && 'swiper-slide'}
       >
         <ReactPlayer
-          loop={true}
           width="100%"
           height={isMobile ? '110px' : '250px'}
           url={props.media.trailer.file.url}
           playing={true}
           muted={true}
+          loop={true}
+          config={{ file: { attributes: { playsInline: true } } }}
         />
       </ViewAllWrapper.ItemLink>
     )
