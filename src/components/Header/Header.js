@@ -21,7 +21,7 @@ const Header = ({
   return (
     <HeaderWrapper>
       {canGoBack ? (
-        <HeaderWrapper.BackLink href="#" isBlack={isBlack} onClick={goBack}>
+        <HeaderWrapper.BackLink href="#" isBlack={true} onClick={goBack}>
           <svg
             width="10"
             height="10"
