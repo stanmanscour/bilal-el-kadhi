@@ -1,9 +1,9 @@
-@import "./reset";
-@import url("https://use.typekit.net/pkw1mig.css");
+@import './reset';
+@import url('https://use.typekit.net/pkw1mig.css');
 
 .image {
   width: 90vw;
-  height: calc(90vw * 9/16);
+  height: calc(90vw * 9 / 16);
   img {
     width: 100%;
     height: 100%;
@@ -11,7 +11,7 @@
   }
   @media screen and (min-width: 1025px) {
     width: 75vw;
-    height: calc(75vw * 9/16)
+    height: calc(75vw * 9 / 16);
   }
 }
 
@@ -21,7 +21,7 @@
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
 }
 
 .player-wrapper {
@@ -38,7 +38,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   width: unset;
   height: unset !important;
   display: flex;
@@ -82,7 +82,7 @@
     right: 10vw;
     bottom: 10vw;
     color: black;
-    font-family: 'franklin-gothic-atf',sans-serif;
+    // font-family: 'franklin-gothic-atf',sans-serif;
     font-weight: 400;
     font-size: 8px;
     line-height: 12px;
