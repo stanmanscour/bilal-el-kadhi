@@ -99,7 +99,8 @@ const Media = props => {
           playing={true}
           muted={true}
           loop={true}
-          config={{ file: { attributes: { playsInline: true } } }}
+          playsinline={true}
+          controls={false}
         />
       </ViewAllWrapper.ItemLink>
     )
