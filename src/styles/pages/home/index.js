@@ -56,6 +56,9 @@ IndexWrapper.ItemLink = styled(Link)`
   img {
     width: 100%;
   }
+  iframe {
+    pointer-events: none;
+  }
 
   @media ${THEME.TabletMin} {
     width: 80%;
