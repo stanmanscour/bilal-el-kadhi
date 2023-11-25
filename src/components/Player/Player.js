@@ -51,6 +51,7 @@ const Player = ({ url, video, fullscreen = false, controls }) => {
               url={video}
               playing={true}
               muted={true}
+              playsinline={true}
             />
           </Link>
         </LittlePlayerWrapper>

@@ -134,6 +134,7 @@ const Media = (props) => {
           width="900px"
           url={props.media.trailer.file.url}
           playing={true}
+          playsinline={true}
           muted={true}
         />
       </IndexWrapper.ItemLink>
