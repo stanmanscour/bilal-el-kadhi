@@ -108,7 +108,6 @@ const Media = (props) => {
           key={props.media.id}
           to={`/prints/${props.media.slug}`}
           rel={`nofollow`}
-          className={props.slider && 'swiper-slide'}
         >
           <picture>
             <img
@@ -127,7 +126,6 @@ const Media = (props) => {
         key={props.media.id}
         to={`/films/${props.media.slug}`}
         rel={`nofollow`}
-        className={props.slider && 'swiper-slide'}
       >
          <ReactPlayer
           loop={true}
@@ -136,6 +134,7 @@ const Media = (props) => {
           playing={true}
           playsinline={true}
           muted={true}
+          controls={false}
         />
       </IndexWrapper.ItemLink>
     )
