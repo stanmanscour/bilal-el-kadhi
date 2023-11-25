@@ -1,23 +1,22 @@
 import styled from 'styled-components'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
-// import { Link } from "gatsby"
 import THEME from '../../styles/theme'
 
 const HeaderWrapper = styled.header`
   z-index: 5;
   position: fixed;
-  top: 10px;
-  left: 5px;
-  right: 5px;
+  top: 16px;
+  left: 16px;
+  right: 16px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: baseline;
 
   @media ${THEME.TabletMin} {
-    top: 10px;
-    left: 10px;
-    right: 10px;
+    top: 24px;
+    left: 24px;
+    right: 24px;
   }
 `
 

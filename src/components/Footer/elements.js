@@ -6,11 +6,16 @@ const FooterWrapper = styled.div`
   padding: 0;
   display: flex;
   justify-content: flex-end;
-  width: calc(100% - 20px);
+  width: calc(100% - 32px);
   position: fixed;
-  left: 10px;
-  bottom: 10px;
+  left: 16px;
+  bottom: 16px;
   box-sizing: border-box;
+  @media ${THEME.TabletMin} {
+    width: calc(100% - 48px);
+    left: 24px;
+    bottom: 24px;
+  }
 `
 
 FooterWrapper.Text = styled.p`

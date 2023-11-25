@@ -23,7 +23,7 @@ const Header = ({ canGoBack, isBlack, isShy, contentTitle, isHome, isContact }) 
         <HeaderWrapper.NavDesktop isHome={isHome} isBlack={isBlack}>
          {isHome && <li>
             <AniLink activeClassName="active" to="/">
-              Bilal El Kadhi
+              Bilal  El Kadhi
             </AniLink>
           </li>}
           {isHome && <li>
