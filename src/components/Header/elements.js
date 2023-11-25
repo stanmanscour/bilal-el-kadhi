@@ -107,7 +107,6 @@ HeaderWrapper.NavDesktop = styled.ul`
     // }
 
     @media ${THEME.TabletMin} {
-      font-size: 16px;
     }
   }
 `
