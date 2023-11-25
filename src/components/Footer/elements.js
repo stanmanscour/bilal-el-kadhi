@@ -3,17 +3,14 @@ import THEME from "../../styles/theme"
 
 const FooterWrapper = styled.div`
   position: fixed;
-  bottom: 0;
-  padding: 10vw;
-
-  @media ${THEME.TabletMin} {
-    padding: 0;
-    display: block;
-    position: fixed;
-    left: 30px;
-    bottom: 30px;
-    box-sizing: border-box;
-  }
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+  width: calc(100% - 20px);
+  position: fixed;
+  left: 10px;
+  bottom: 10px;
+  box-sizing: border-box;
 `
 
 FooterWrapper.Text = styled.p`
@@ -21,10 +18,10 @@ FooterWrapper.Text = styled.p`
   font-family: ${THEME.primaryFontFamily};
   font-weight: 400;
   text-decoration: none;
-  font-size: 8px;
+  font-size: 10px;
   line-height: 12px;
   @media ${THEME.TabletMin} {
-    font-size: 12px;
+    font-size: 14px;
     line-height: 18px;
   }
 `

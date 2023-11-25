@@ -1,9 +1,9 @@
 // import React, { useRef, useState } from "react"
-import React from "react"
 // import ReactPlayer from "react-player"
+import React from "react"
 import "../../styles/index.scss"
 import Header from "../Header"
-// import Footer from "../Footer"
+import Footer from "../Footer"
 
 import LayoutWrapper from "./elements"
 
@@ -64,7 +64,7 @@ const Layout = ({
         isHome={isHome}
       />
       {children}
-      {/* {<Footer isBlack={isBlack} canGoBack={canGoBack} children={footerChildren} />} */}
+      {<Footer isBlack={true} canGoBack={canGoBack} children={footerChildren} />}
     </LayoutWrapper>
   )
 }

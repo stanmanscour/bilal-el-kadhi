@@ -9,9 +9,11 @@ const IndexWrapper = styled.div`
   height: auto;
   justify-content: center;
   align-items: center;
-  div, video, img {
+  div,
+  video,
+  img {
     width: 100% !important;
-    height: auto !important;
+    height: 100% !important;
   }
 
   @media ${THEME.TabletMin} {

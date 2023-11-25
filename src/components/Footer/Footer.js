@@ -5,24 +5,21 @@ const Footer = ({ isBlack, canGoBack }) => {
   // const year = new Date().getFullYear()
   return (
     <FooterWrapper>
-      {/* {!canGoBack ? (
+      {!canGoBack ? (
         <FooterWrapper.Text isBlack={isBlack}>
-          © {year} BILAL EL KADHI.
-          <br />
-          All content copyright the artist. No commercial use without express
-          written permission.
+          © 2024
         </FooterWrapper.Text>
       ) : (
         ''
-      )} */}
-      {!canGoBack && (
+      )}
+      {/* {!canGoBack && (
         <FooterWrapper.ContactLink
           isBlack={isBlack}
           href="mailto:contact@bilalelkadhi.studio"
         >
           For all booking inquiries
         </FooterWrapper.ContactLink>
-      )}
+      )} */}
     </FooterWrapper>
   );
 };

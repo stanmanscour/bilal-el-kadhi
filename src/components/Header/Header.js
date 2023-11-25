@@ -21,14 +21,14 @@ const Header = ({ canGoBack, isBlack, isShy, contentTitle, isHome, isContact }) 
       ) : ''}
       {!isShy && (
         <HeaderWrapper.NavDesktop isHome={isHome} isBlack={isBlack}>
-          {isHome && <li>
-            <AniLink activeClassName="active" to="/contact">
-              Contact
+         {isHome && <li>
+            <AniLink activeClassName="active" to="/">
+              Bilal El Kadhi
             </AniLink>
           </li>}
-          {isContact && <li>
-            <AniLink activeClassName="active" to="/">
-              Images
+          {isHome && <li>
+            <AniLink activeClassName="active" to="/contact">
+              Studio
             </AniLink>
           </li>}
         </HeaderWrapper.NavDesktop>

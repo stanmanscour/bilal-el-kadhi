@@ -3,7 +3,7 @@ import THEME from "../../styles/theme"
 
 const LayoutWrapper = styled.div`
   min-height: 100vh;
-  background-color: ${({ isBlack }) => (isBlack ? "black" : "white")};
+  background-color: ${({ isBlack }) => (isBlack ? "black" : "black")};
 
   .password {
     position: fixed;
