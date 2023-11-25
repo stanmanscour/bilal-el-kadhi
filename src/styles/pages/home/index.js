@@ -56,7 +56,7 @@ IndexWrapper.ItemLink = styled(Link)`
   img {
     width: 100%;
   }
-  iframe {
+  video {
     pointer-events: none;
   }
 

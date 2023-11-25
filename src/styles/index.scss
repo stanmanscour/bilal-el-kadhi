@@ -1,56 +1,6 @@
 @import "./reset";
 @import url("https://use.typekit.net/pkw1mig.css");
 
-.image {
-  width: 90vw;
-  height: calc(90vw * 9/16);
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  @media screen and (min-width: 1025px) {
-    width: 75vw;
-    height: calc(75vw * 9/16)
-  }
-}
-
-.play {
-  width: 15px !important;
-  height: auto !important;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%,-50%);
-}
-
-.player-wrapper {
-  width: 90vw;
-  position: relative;
-  padding-top: calc(0.9 * 56.25%);
-  @media screen and (min-width: 1025px) {
-    width: 75vw;
-    padding-top: calc(0.75 * 56.25%);
-  }
-}
-
-.player-button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  width: unset;
-  height: unset !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 !important;
-  margin: 0 !important;
-  border: 0 !important;
-  z-index: 2;
-  transition: opacity 0.3s ease;
-}
-
 .react-player {
   position: absolute;
   top: 0;
@@ -67,26 +17,6 @@
 .vimeo iframe {
   width: 100%;
   height: 100%;
-}
-
-.swiper {
-  height: 80vh;
-  height: 80dvh;
-  &-slide {
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-  }
-  &-status {
-    position: fixed;
-    right: 10vw;
-    bottom: 10vw;
-    color: black;
-    font-family: 'franklin-gothic-atf',sans-serif;
-    font-weight: 400;
-    font-size: 8px;
-    line-height: 12px;
-  }
 }
 
 body {

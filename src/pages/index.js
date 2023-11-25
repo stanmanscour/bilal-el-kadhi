@@ -5,7 +5,6 @@ import Head from "../components/Head"
 import ReactPlayer from "react-player"
 import IndexWrapper from "../styles/pages/home"
 
-// import Swiper from 'swiper'
 import 'swiper/swiper.min.css'
 
 const Index = () => {
@@ -63,33 +62,6 @@ const Index = () => {
     </Layout>
   )
 }
-
-// const Slider = (props) => {
-//   const [current, setCurrent] = useState(0)
-//   const [total, setTotal] = useState(0)
-//   useEffect(() => {
-//     const swiper = new Swiper('.swiper', {
-//       loop: true,
-//       on: {
-//         slideChange: function (e) {
-//           setCurrent(e.activeIndex + 1)
-//         },
-//       },
-//     })
-//     setTotal(swiper.slides.length)
-//   }, [])
-
-//   return (
-//     <div className={'swiper'} >
-//       <div className={'swiper-wrapper'} >
-//       {props.medias.map((media, index) => {
-//         return  <Media key={'sliderMedia' + index} media={media} slider={true} />
-//       })}
-//       </div>
-//       <div className={'swiper-status'} >{current} / {total}</div>
-//     </div>
-//   )
-// }
 
 const ScrollDiv = (props) => {
   return (
